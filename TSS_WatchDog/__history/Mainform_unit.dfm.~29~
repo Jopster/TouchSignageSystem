@@ -1,0 +1,265 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Watchdog - Hauptform'
+  ClientHeight = 259
+  ClientWidth = 542
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object SpeedButton1: TSpeedButton
+    Left = 291
+    Top = 24
+    Width = 50
+    Height = 22
+    Caption = 'manuell'
+  end
+  object dsLed1: TdsLed
+    Left = 8
+    Top = 24
+    Width = 17
+    Height = 17
+    Bevel = blNone
+    Shape = ltEllipse
+    OnColor = clLime
+    OffColor = clRed
+    LedOn = False
+    Style = lsStandard
+  end
+  object Label1: TLabel
+    Left = 40
+    Top = 28
+    Width = 229
+    Height = 13
+    Caption = 'Lebensignal - Gr'#252'n gesendet -> Rot empfangen'
+  end
+  object Label2: TLabel
+    Left = 40
+    Top = 49
+    Width = 184
+    Height = 13
+    Caption = 'Lebensignal -TSS_FE 30 sek. '#252'berf'#228'llig'
+  end
+  object dsLed2: TdsLed
+    Left = 17
+    Top = 47
+    Width = 17
+    Height = 17
+    Bevel = blNone
+    Shape = ltEllipse
+    OnColor = clOlive
+    OffColor = clBlack
+    LedOn = False
+    Style = lsStandard
+  end
+  object Label3: TLabel
+    Left = 40
+    Top = 68
+    Width = 184
+    Height = 13
+    Caption = 'Lebensignal -TSS_FE 60 sek. '#252'berf'#228'llig'
+  end
+  object dsLed3: TdsLed
+    Left = 17
+    Top = 66
+    Width = 17
+    Height = 17
+    Bevel = blNone
+    Shape = ltEllipse
+    OnColor = clYellow
+    OffColor = clBlack
+    LedOn = False
+    Style = lsStandard
+  end
+  object Label4: TLabel
+    Left = 40
+    Top = 87
+    Width = 184
+    Height = 13
+    Caption = 'Lebensignal -TSS_FE 90 sek. '#252'berf'#228'llig'
+  end
+  object dsLed4: TdsLed
+    Left = 17
+    Top = 85
+    Width = 17
+    Height = 17
+    Bevel = blNone
+    Shape = ltEllipse
+    OnColor = clRed
+    OffColor = clBlack
+    LedOn = False
+    Style = lsStandard
+  end
+  object dsLed5: TdsLed
+    Left = 33
+    Top = 104
+    Width = 17
+    Height = 17
+    Bevel = blNone
+    Shape = ltEllipse
+    OnColor = clYellow
+    OffColor = clBlack
+    LedOn = False
+    Style = lsStandard
+  end
+  object Label5: TLabel
+    Left = 56
+    Top = 106
+    Width = 139
+    Height = 13
+    Caption = 'Programm Neustart - TSS_FE'
+  end
+  object Image1: TImage
+    Left = 8
+    Top = 146
+    Width = 192
+    Height = 108
+    Stretch = True
+  end
+  object Label6: TLabel
+    Left = 8
+    Top = 5
+    Width = 18
+    Height = 13
+    Caption = 'ID :'
+  end
+  object Label7: TLabel
+    Left = 8
+    Top = 127
+    Width = 361
+    Height = 13
+    Caption = 'File'
+  end
+  object SpeedButton2: TSpeedButton
+    Left = 484
+    Top = 176
+    Width = 50
+    Height = 22
+    Caption = 'manuell'
+    OnClick = SpeedButton2Click
+  end
+  object CheckBox1: TCheckBox
+    Left = 206
+    Top = 237
+    Width = 97
+    Height = 17
+    Caption = 'Screenshot 10s'
+    Checked = True
+    State = cbChecked
+    TabOrder = 0
+    OnClick = CheckBox1Click
+  end
+  object Edit1: TEdit
+    Left = 208
+    Top = 216
+    Width = 121
+    Height = 21
+    TabOrder = 1
+    Text = '1000'
+  end
+  object TextTrayIcon1: TTextTrayIcon
+    CycleInterval = 0
+    Icon.Data = {
+      0000010001001010200000000000680400001600000028000000100000002000
+      000001002000000000000004000000000000000000000000000000000000FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0090DB
+      FF00903A3A00FFFFDB00FFFFFF00DBFFFF00003A900000000000000000003A00
+      0000FFDB9000DBFFFF00003A900000000000000000003A000000FFDB900090DB
+      FF00903A3A00FFFFDB00FFFFFF0090DBFF00B6663A00FFFFFF00FFFFFF0090DB
+      FF00903A3A0090DBDB00B6663A00FFFFFF00FFFFFF0090DBFF00903A3A0090DB
+      FF00903A3A00FFFFDB00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00B6FF
+      FF0066006600FFFFB600FFFFFF00FFFFFF00FFFFFF00B6FFFF006600660090DB
+      FF00903A3A00FFFFDB00FFFFFF00FFFFFF00FFFFFF00FFFFFF0066B6FF000000
+      0000B6660000FFFFFF00FFFFFF00FFFFFF0066B6FF0000000000B666000090DB
+      FF00903A3A00FFFFDB00FFFFFF00FFFFFF000066B60000000000B6660000FFFF
+      FF00FFFFFF00FFFFFF000066B60000000000B6660000FFFFFF00FFFFFF0090DB
+      FF00903A3A00FFFFDB00FFFFFF00B6FFFF0066006600FFFFB600FFFFFF00FFFF
+      FF00FFFFFF00B6FFFF0066006600FFFFB600FFFFFF00FFFFFF00FFFFFF0090DB
+      FF00903A3A00FFFFDB00FFFFFF00B6FFFF003A006600FFDB9000FFFFFF00B6FF
+      FF00B6666600B6FFFF003A006600FFDB9000FFFFFF00B6FFFF00B66666000000
+      0000000000000000000000000000DB903A0090DBFF0000003A00000000000000
+      0000DB903A00FFFFFF0090DBFF0000003A000000000000000000DB903A00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000}
+    IconIndex = 0
+    MinimizeToTray = True
+    Text = 'TSS'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    Color = clWhite
+    Border = False
+    Options.OffsetX = 0
+    Options.OffsetY = 0
+    Options.LineDistance = 0
+    Left = 224
+    Top = 24
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 30000
+    OnTimer = Timer1Timer
+    Left = 120
+    Top = 24
+  end
+  object OvertimeAllert: TTimer
+    Enabled = False
+    Interval = 30000
+    OnTimer = OvertimeAllertTimer
+    Left = 168
+    Top = 24
+  end
+  object RestartTimer: TTimer
+    Enabled = False
+    Interval = 5000
+    OnTimer = RestartTimerTimer
+    Left = 288
+    Top = 48
+  end
+  object screenshottimer: TTimer
+    Enabled = False
+    Interval = 10000
+    OnTimer = screenshottimerTimer
+    Left = 232
+    Top = 120
+  end
+  object starttimer: TTimer
+    Enabled = False
+    OnTimer = starttimerTimer
+    Left = 408
+    Top = 8
+  end
+  object IdTCPClient1: TIdTCPClient
+    ConnectTimeout = 0
+    Host = 'localhost'
+    IPVersion = Id_IPv4
+    Port = 9800
+    ReadTimeout = -1
+    Left = 496
+    Top = 200
+  end
+end

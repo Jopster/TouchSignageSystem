@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.376,C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_WatchDog\TSS_WD_DataForm_unit.pas=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_WatchDog\Unit3.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.682,C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_WatchDog\Mainform_unit.dfm=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.682,C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_WatchDog\Mainform_unit.pas=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.994,=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.642,=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_WatchDog\Unit3.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.606,C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_WatchDog\TSS_WD.dproj=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.376,C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_WatchDog\TSS_WD_DataForm_unit.dfm=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_WatchDog\Unit3.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.040,=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_WatchDog\Unit2.pas</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Mainform_unit.pas"/>
+    <File Path="Mainform_unit.dfm"/>
+    <File Path="TSS_WD_DataForm_unit.pas"/>
+    <File Path="TSS_WD_DataForm_unit.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>
