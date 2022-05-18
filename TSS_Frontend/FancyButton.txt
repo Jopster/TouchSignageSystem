@@ -1,0 +1,35 @@
+--------------------------------------------------------------
+Component: DsFancyButton 2.1
+Compiler : Delphi 3/4/5
+           
+Copyright: (c) 1999-2001 Djoko Susilo
+Jl. Niaga Raya Q14 Kemang Pratama, Bekasi 17116, Indonesia
+e-mail: djokos@cabi.net.id
+web: http://www.niagaraya.com
+
+--------------------------------------------------------------
+
+Thank you for trying this component, hopefully it will meet your need. You can use it freely as far as you don't put it in commercial matter. Otherwise you must register your copy. However, I appreciate if you can contribute by sending me $1, for further development.
+
+DsFancyButton is a graphic button with nice face using gradient effect surrounding the border. The basic shape available are Rectangle, Ellipse and Capsule. From these basic shapes you can get other nice shapes like Oval, Round or Round Rectangle.
+
+The uniqueness of this component includes:
+- Gradient face, you need no bitmap to get same effect.
+- 3D Caption.
+
+Please send your feedback and suggestion to: djokos@cabi.net.id
+---------------------------------------------------------------
+
+Update version 2.0 -- 10-Feb-2001
+-Add glyph and its layout to the button. You can get pressing
+ effect and disable state.
+ Max. number of glyph is 3 (0=enable  1=disable  2=pressed)
+
+---------------------------------------------------------------
+
+Update version 2.1 -- 08-July-2001
+-Restructure the codes to implement property groupings.
+-Glyph number is now 4 (enable, disable, hover and press).
+-Nicer pressing effect using automatic dimmed color.
+
+---------------------------------------------------------------
