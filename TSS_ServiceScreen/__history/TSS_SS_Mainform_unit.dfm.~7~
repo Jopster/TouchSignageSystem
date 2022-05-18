@@ -1,0 +1,33 @@
+object TSS_SS_MainForm: TTSS_SS_MainForm
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'TSS_SS Hauptfenster'
+  ClientHeight = 581
+  ClientWidth = 1016
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  WindowState = wsMaximized
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object IdTCPServer1: TIdTCPServer
+    Bindings = <>
+    DefaultPort = 0
+    OnConnect = IdTCPServer1Connect
+    Scheduler = IdSchedulerOfThreadDefault1
+    OnExecute = IdTCPServer1Execute
+    Left = 952
+    Top = 488
+  end
+  object IdSchedulerOfThreadDefault1: TIdSchedulerOfThreadDefault
+    MaxThreads = 0
+    Left = 856
+    Top = 488
+  end
+end

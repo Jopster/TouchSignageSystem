@@ -1,0 +1,103 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 542
+  ClientWidth = 1000
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 210
+    Height = 210
+    TabOrder = 0
+    object Image1: TImage
+      Left = 8
+      Top = 24
+      Width = 192
+      Height = 108
+    end
+    object dsLed1: TdsLed
+      Left = 8
+      Top = 138
+      Width = 17
+      Height = 17
+      Bevel = blNone
+      Shape = ltEllipse
+      OnColor = clLime
+      OffColor = clRed
+      LedOn = False
+      Style = lsStandard
+    end
+    object dsLed2: TdsLed
+      Left = 31
+      Top = 138
+      Width = 17
+      Height = 17
+      Bevel = blNone
+      Shape = ltEllipse
+      OnColor = clLime
+      OffColor = clRed
+      LedOn = False
+      Style = lsStandard
+    end
+    object dsLed3: TdsLed
+      Left = 54
+      Top = 138
+      Width = 17
+      Height = 17
+      Bevel = blNone
+      Shape = ltEllipse
+      OnColor = clLime
+      OffColor = clRed
+      LedOn = False
+      Style = lsStandard
+    end
+    object dsLed4: TdsLed
+      Left = 77
+      Top = 138
+      Width = 17
+      Height = 17
+      Bevel = blNone
+      Shape = ltEllipse
+      OnColor = clLime
+      OffColor = clRed
+      LedOn = False
+      Style = lsStandard
+    end
+    object Label1: TLabel
+      Left = 8
+      Top = 161
+      Width = 192
+      Height = 11
+      AutoSize = False
+      Caption = 'Label1'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -9
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object dsLed5: TdsLed
+      Left = 8
+      Top = 2
+      Width = 17
+      Height = 18
+      Bevel = blNone
+      Shape = ltEllipse
+      OnColor = clLime
+      OffColor = clRed
+      LedOn = False
+      Style = lsStandard
+    end
+  end
+end

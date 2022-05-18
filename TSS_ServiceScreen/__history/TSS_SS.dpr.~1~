@@ -1,0 +1,14 @@
+program TSS_SS;
+
+uses
+  Vcl.Forms,
+  TSS_SS_Mainform_unit in 'TSS_SS_Mainform_unit.pas' {Form2};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm2, Form2);
+  Application.Run;
+end.
