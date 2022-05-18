@@ -1,0 +1,96 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{80F4410B-5400-4B45-AF41-833866ED7E34}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TSS_Frontend\TSS_FE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TSS_Backend\TSS_BE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TSS_WatchDog\TSS_WD.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\CoolTrayIcon\CoolTrayIcon_D5.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TSS_ServiceScreen\TSS_SS.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\animatedButton.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TSS_FE">
+        <MSBuild Projects="TSS_Frontend\TSS_FE.dproj"/>
+    </Target>
+    <Target Name="TSS_FE:Clean">
+        <MSBuild Projects="TSS_Frontend\TSS_FE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TSS_FE:Make">
+        <MSBuild Projects="TSS_Frontend\TSS_FE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TSS_BE">
+        <MSBuild Projects="TSS_Backend\TSS_BE.dproj"/>
+    </Target>
+    <Target Name="TSS_BE:Clean">
+        <MSBuild Projects="TSS_Backend\TSS_BE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TSS_BE:Make">
+        <MSBuild Projects="TSS_Backend\TSS_BE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TSS_WD">
+        <MSBuild Projects="TSS_WatchDog\TSS_WD.dproj"/>
+    </Target>
+    <Target Name="TSS_WD:Clean">
+        <MSBuild Projects="TSS_WatchDog\TSS_WD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TSS_WD:Make">
+        <MSBuild Projects="TSS_WatchDog\TSS_WD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CoolTrayIcon_D5">
+        <MSBuild Projects="..\..\Components\CoolTrayIcon\CoolTrayIcon_D5.dproj"/>
+    </Target>
+    <Target Name="CoolTrayIcon_D5:Clean">
+        <MSBuild Projects="..\..\Components\CoolTrayIcon\CoolTrayIcon_D5.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CoolTrayIcon_D5:Make">
+        <MSBuild Projects="..\..\Components\CoolTrayIcon\CoolTrayIcon_D5.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TSS_SS">
+        <MSBuild Projects="TSS_ServiceScreen\TSS_SS.dproj"/>
+    </Target>
+    <Target Name="TSS_SS:Clean">
+        <MSBuild Projects="TSS_ServiceScreen\TSS_SS.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TSS_SS:Make">
+        <MSBuild Projects="TSS_ServiceScreen\TSS_SS.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="animatedButton">
+        <MSBuild Projects="..\animatedButton.dproj"/>
+    </Target>
+    <Target Name="animatedButton:Clean">
+        <MSBuild Projects="..\animatedButton.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="animatedButton:Make">
+        <MSBuild Projects="..\animatedButton.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TSS_FE;TSS_BE;TSS_WD;CoolTrayIcon_D5;TSS_SS;animatedButton"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TSS_FE:Clean;TSS_BE:Clean;TSS_WD:Clean;CoolTrayIcon_D5:Clean;TSS_SS:Clean;animatedButton:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TSS_FE:Make;TSS_BE:Make;TSS_WD:Make;CoolTrayIcon_D5:Make;TSS_SS:Make;animatedButton:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
