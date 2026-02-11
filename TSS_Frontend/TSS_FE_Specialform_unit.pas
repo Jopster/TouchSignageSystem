@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.StdCtrls,WMPLib_TLB, Vcl.ExtCtrls,
   Vcl.OleCtrls,System.Generics.Collections,TSS_ButtonClass_unit,
-  System.ImageList, Vcl.ImgList, AnimatedButton, siBtns;
+  System.ImageList, Vcl.ImgList, AnimatedButton;
 
 type
   TTSS_FE_Specialform = class(TForm)
@@ -21,9 +21,9 @@ type
     Playtimer: TTimer;
     SpeedButton1: TSpeedButton;
     Panel1: TPanel;
-    Wplayer1: TWindowsMediaPlayer;
     SpeedButton2: TSpeedButton;
     ImageList1: TImageList;
+    WPlayer1: TWindowsMediaPlayer;
     procedure SpeedButton4Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure PlaytimerTimer(Sender: TObject);
@@ -118,6 +118,7 @@ begin
     WPlayer1.Width:=panel1.Width;
     WPlayer1.Height:=Panel1.Height;
     WPlayer1.uiMode:='none';
+    WPlayer1.stretchToFit:=true;
     Wplayer1.OnPlayStateChange:=PlayStateChange;
     WPlayer1.BringToFront;
     playpos:=0;
@@ -128,6 +129,7 @@ begin
     imgCount:=IniPl.ReadInteger('Common','Images',0);
     BtnCount:=IniPl.ReadInteger('Common','Buttons',0);
     VideoCount:=IniPl.ReadInteger('Common','Videos',0);
+    DataForm.writeDBLog('SPECIAL_CONTENT','Specialcontent : Bilder '+inttostr(imgCount)+' Video '+inttostr(VideoCount)+' Buttons '+inttostr(BtnCount),'',2);
     for a:=1 to imgCount do begin
       Im:=Timage.Create(TSS_FE_Specialform);
       Im.Parent:=TSS_FE_Specialform;
@@ -136,6 +138,7 @@ begin
       Im.Width:=IniPl.ReadInteger('Image_'+inttostr(a),'Width',0);
       Im.Height:=IniPl.ReadInteger('Image_'+inttostr(a),'Height',0);
       Im.Picture.LoadFromFile(IniPl.ReadString('Image_'+inttostr(a),'File',''));
+      DataForm.writeDBLog('SPECIAL_CONTENT','Specialcontent : Bild '+inttostr(a)+' Datei : '+IniPl.ReadString('Image_'+inttostr(a),'File',''),'',2);
       Im.Show;
       Elements.Add(Im);
     end;
@@ -143,6 +146,7 @@ begin
       Btn:=TTSS_Button.Create(TSS_FE_Specialform);
       Btn.Parent:=TSS_FE_Specialform;
       Btn.LoadButton(DataForm.MainPath+'SchemaTemp\'+IniPl.ReadString('Button_'+inttostr(a),'ButtonID','')+'.BDTA');
+      DataForm.writeDBLog('SPECIAL_CONTENT','Specialcontent : Button '+inttostr(a)+' Datei : '+IniPl.ReadString('Button_'+inttostr(a),'ButtonID','')+'.BDTA','',2);
       Btn.LoadButtonImage(btn.ButtonimgFilename);
       Btn.OnMouseup:=MySpecialMouseUp;
       Btn.DisplayButton;
@@ -203,6 +207,7 @@ begin
   Playtimer.Enabled:=false;
   if playpos>PLaylist.Count-1 then playpos:=0;
   WPlayer1.URL:=Dataform.MainPath+Dataform.specialContentGallery+'\'+PLaylist.Strings[playpos];
+  DataForm.writeDBLog('SPECIAL_CONTENT','Specialcontent PlayListFile : '+Dataform.MainPath+Dataform.specialContentGallery+'\'+PLaylist.Strings[playpos],'',2);
   WPlayer1.BringToFront;
   WPlayer1.controls.play;
 end;

@@ -13,6 +13,7 @@ type
   private
     BGPanel: TPanel;
     BGImage: TImage;
+    IDLabel: TLabel;
     FLeft: Integer;
     Ftop: Integer;
     FWidth: integer;
@@ -42,6 +43,7 @@ type
     property Name:String read FName write SetFName;
     property Parent:TWincontrol read FParent Write SetFParent;
     property ScreenID:String read FScreenID write SetScreenID;
+    destructor Destroy; override;
   end;
 
 implementation
@@ -52,25 +54,50 @@ constructor TTSS_ServiceScreen.Create(AOwner: TComponent);
 begin
   inherited;
   BGPanel:=TPanel.Create(AOwner);
-  BGPanel.Parent:=TWinControl(self);
+  BGPanel.Parent:=TWinControl(AOwner);
   BGPanel.BevelInner:=bvLowered;
   BGPanel.ParentBackground:=false;
+  BGPanel.Caption:='';
   BGImage:=Timage.Create(AOwner);
   BGImage.Parent:=BGPanel;
   BGImage.Height:=108;
   BGImage.Width:=192;
   BGImage.Top:=30;
   BGImage.Stretch:=true;
+  BGImage.picture.LoadFromFile('C:\TSS\ServiceScreen\Default\online.png');
+  BGImage.Visible:=True;
+  BGPanel.InsertControl(BGImage);
+  IDLabel:=Tlabel.create(AOwner);
+  IDLabel.Parent:=BGPanel;
+  IDLabel.Top:=2;
+  IDLabel.Width:=BGPanel.Width;
+  IDLabel.Height:=18;
+  IDLabel.font.Size:=6;
+  IDLabel.Visible:=True;
+  BGPanel.InsertControl(IDLabel)
+end;
+
+destructor TTSS_ServiceScreen.Destroy;
+begin
+  inherited;
+  freeandnil(IDLabel);
+  freeandnil(BGImage);
+  freeandnil(BGPanel);
 end;
 
 procedure TTSS_ServiceScreen.SetFBGColor(const Value: TColor);
 begin
   FBGColor:=value;
   BGPanel.Color:=Value;
+  BGPanel.repaint;
 end;
 
 procedure TTSS_ServiceScreen.SetFHeight(const Value: integer);
 begin
+
+
+
+
   FHeight:=Value;
   BGPanel.Height:=Value;
 end;
@@ -92,6 +119,7 @@ procedure TTSS_ServiceScreen.SetFParent(const Value: TWincontrol);
 begin
   FParent:=Value;
   BGPanel.Parent:=Value;
+  BGImage.parent:=Value;
 end;
 
 procedure TTSS_ServiceScreen.SetFtop(const Value: Integer);
@@ -110,6 +138,7 @@ end;
 procedure TTSS_ServiceScreen.SetScreenID(const Value: String);
 begin
   FScreenID := Value;
+  idlabel.caption:=Fscreenid;
 end;
 
 end.

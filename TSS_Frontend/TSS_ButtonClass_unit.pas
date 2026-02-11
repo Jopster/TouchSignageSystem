@@ -1,11 +1,21 @@
-unit TSS_ButtonClass_unit;
+fnit TSS_ButtonClass_unit;
 
 interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.Buttons,TSS_HttpButtonImgLoadThread_unit,
-  Vcl.StdCtrls, Vcl.Menus;
+  Vcl.StdCtrls, Vcl.Menus,dsLeds,centervideo_class_unit;
+type
+  TextFeld = Record
+    Text : String;
+    left : word;
+    top : word;
+    Size : word;
+    Color : Tcolor;
+    font : TFont;
+  End;
+
 
 type
   TTSS_Button = class(TPanel)
@@ -19,6 +29,7 @@ type
     LoadText:TLabel;
     ImgHttpLoadThread:THttpButtonImgLoadThread;
     BtnTimer:TTimer;
+    InfoLed:tdsled;
     FLeft: Integer;
     Ftop: Integer;
     FWidth: integer;
@@ -68,6 +79,43 @@ type
     FGallerieCols: Word;
     FButtonFileId: string;
     FBtnPopup: TPopupMenu;
+    FCanEditButton: Boolean;
+    FBtnEditPopup: TPopupMenu;
+    FTextZeile1: TextFeld;
+    FTextZeile2: TextFeld;
+    FTextZeile3: TextFeld;
+    FTextZeile4: TextFeld;
+    FTextZeile2_Text: String;
+    FTextZeile3_Text: String;
+    FTextZeile1_Text: String;
+    FTextZeile4_Text: String;
+    FTextZeile2_Text_X: Integer;
+    FTextZeile3_Text_X: Integer;
+    FTextZeile2_Text_Y: Integer;
+    FTextZeile3_Text_Y: Integer;
+    FTextZeile1_Text_X: Integer;
+    FTextZeile1_Text_Y: Integer;
+    FTextZeile4_Text_X: Integer;
+    FTextZeile4_Text_Y: Integer;
+    FTextZeile4_Text_S: TFont;
+    FTextZeile2_Text_S: Tfont;
+    FTextZeile3_Text_S: TFont;
+    FTextZeile1_Text_S: TFont;
+    FTextZeile1_Text_V: Boolean;
+    FTextZeile4_Text_V: Boolean;
+    FTextZeile2_Text_V: Boolean;
+    FTextZeile3_Text_V: Boolean;
+    FCenterVideo2File: String;
+    FCenterVideo3File: String;
+    FCenterVideo1File: String;
+    FCenterVideo4File: String;
+    FButtonvisible: boolean;
+    Fvisible: Boolean;
+    FCenterPanelTop: Word;
+    FCenterPanelHeight: Word;
+    FCenterPanelLeft: Word;
+    FCenterPanelWidth: Word;
+    FShowAddress: boolean;
     procedure SetFLeft(const Value: Integer);
     procedure SetFtop(const Value: Integer);
     procedure SetFWidth(const Value: integer);
@@ -119,11 +167,45 @@ type
     procedure SetGallerieW(const Value: Word);
     procedure SetButtonFileId(const Value: string);
     procedure SetBtnPopup(const Value: TPopupMenu);
+    procedure SetCanEditButton(const Value: Boolean);
+    procedure SetBtnEditPopup(const Value: TPopupMenu);
+    procedure SetTextZeile1_Text(const Value: String);
+    procedure SetTextZeile2_Text(const Value: String);
+    procedure SetTextZeile3_Text(const Value: String);
+    procedure SetTextZeile4_Text(const Value: String);
+    procedure SetTextZeile1_Text_X(const Value: Integer);
+    procedure SetTextZeile1_Text_Y(const Value: Integer);
+    procedure SetTextZeile2_Text_X(const Value: Integer);
+    procedure SetTextZeile2_Text_Y(const Value: Integer);
+    procedure SetTextZeile3_Text_X(const Value: Integer);
+    procedure SetTextZeile3_Text_Y(const Value: Integer);
+    procedure SetTextZeile4_Text_X(const Value: Integer);
+    procedure SetTextZeile4_Text_Y(const Value: Integer);
+    procedure SetTextZeile1_Text_S(const Value: Tfont);
+    procedure SetTextZeile2_Text_S(const Value: Tfont);
+    procedure SetTextZeile3_Text_S(const Value: TFont);
+    procedure SetTextZeile4_Text_S(const Value: TFont);
+    procedure SetTextZeile1_Text_V(const Value: Boolean);
+    procedure SetTextZeile2_Text_V(const Value: Boolean);
+    procedure SetTextZeile3_Text_V(const Value: Boolean);
+    procedure SetTextZeile4_Text_V(const Value: Boolean);
+    procedure SetCenterVideo1File(const Value: String);
+    procedure SetCenterVideo2File(const Value: String);
+    procedure SetCenterVideo3File(const Value: String);
+    procedure SetCenterVideo4File(const Value: String);
+    procedure SetButtonvisible(const Value: boolean);
+    procedure Setvisible(const Value: Boolean);
+    procedure SetCenterPanelHeight(const Value: Word);
+    procedure SetCenterPanelLeft(const Value: Word);
+    procedure SetCenterPanelTop(const Value: Word);
+    procedure SetCenterPanelWidth(const Value: Word);
+    procedure SetShowAddress(const Value: boolean);
   published
     { Private-Deklarationen }
   public
     { Public-Deklarationen }
     Property ButtonFileId:string read FButtonFileId write SetButtonFileId;
+    Property EBGShape:TShape read BGShape;
     Property EBGImage:Timage read BGImage;
     property BtnPopup:TPopupMenu read FBtnPopup write SetBtnPopup;
     Property left:Integer read FLeft Write SetFLeft;
@@ -139,8 +221,29 @@ type
     property KundenName2:String read FKundenName2 write SetFKundenName2;
     property KundenStrasse:String read FKundenStrasse write SetFKundenStrasse;
     property KundenPLZOrt:String read FKundenPLZOrt write SetFKundenPLZOrt;
+    property TextZeile1_Text:String read FTextZeile1_Text write SetTextZeile1_Text;
+    property TextZeile1_Text_X:Integer read FTextZeile1_Text_X write SetTextZeile1_Text_X;
+    property TextZeile1_Text_Y:Integer read FTextZeile1_Text_Y write SetTextZeile1_Text_Y;
+    property TextZeile1_Text_S:TFont read FTextZeile1_Text_S write SetTextZeile1_Text_S;
+    property TextZeile1_Text_V:Boolean read FTextZeile1_Text_V write SetTextZeile1_Text_V;
+    property TextZeile2_Text:String read FTextZeile2_Text write SetTextZeile2_Text;
+    property TextZeile2_Text_X:Integer read FTextZeile2_Text_X write SetTextZeile2_Text_X;
+    property TextZeile2_Text_Y:Integer read FTextZeile2_Text_Y write SetTextZeile2_Text_Y;
+    property TextZeile2_Text_S:Tfont read FTextZeile2_Text_S write SetTextZeile2_Text_S;
+    property TextZeile2_Text_V:Boolean read FTextZeile2_Text_V write SetTextZeile2_Text_V;
+    property TextZeile3_Text:String read FTextZeile3_Text write SetTextZeile3_Text;
+    property TextZeile3_Text_X:Integer read FTextZeile3_Text_X write SetTextZeile3_Text_X;
+    property TextZeile3_Text_Y:Integer read FTextZeile3_Text_Y write SetTextZeile3_Text_Y;
+    property TextZeile3_Text_S:TFont read FTextZeile3_Text_S write SetTextZeile3_Text_S;
+    property TextZeile3_Text_V:Boolean read FTextZeile3_Text_V write SetTextZeile3_Text_V;
+    property TextZeile4_Text:String read FTextZeile4_Text write SetTextZeile4_Text;
+    property TextZeile4_Text_X:Integer read FTextZeile4_Text_X write SetTextZeile4_Text_X;
+    property TextZeile4_Text_Y:Integer read FTextZeile4_Text_Y write SetTextZeile4_Text_Y;
+    property TextZeile4_Text_S:TFont read FTextZeile4_Text_S write SetTextZeile4_Text_S;
+    property TextZeile4_Text_V:Boolean read FTextZeile4_Text_V write SetTextZeile4_Text_V;
     property Parent:TWincontrol read FParent Write SetFParent;
     property hParent:TWincontrol read FhParent write SethParent;
+    property ShowAddress:boolean read FShowAddress write SetShowAddress;
     property ButtonActive:boolean read FButtonActive write SetButtonActive;
     property ButtonActionInActive:word read FButtonActionInActive write SetButtonActionInActive;
     property ButtonActionActive:word read FButtonActionActive write SetButtonActionActive;
@@ -168,28 +271,76 @@ type
     property Feldname:String read FFeldname write SetFeldname;
     property HasTimer:Boolean read FHasTimer write SetHasTimer;
     property TimerTime:Word read FTimerTime write SetTimerTime;
+    property CanEditButton:Boolean read FCanEditButton write SetCanEditButton;
+    property BtnEditPopup:TPopupMenu read FBtnEditPopup write SetBtnEditPopup;
+    property Buttonvisible:boolean read FButtonvisible write SetButtonvisible;
     procedure MyBtnOnTimer(Sender: TObject);
     property GallerieDivider:Word read FGallerieDivider write SetGallerieDivider;
     property GallerieRows:Word read FGallerieRows write SetGallerieRows;
     property GallerieCols:Word read FGallerieCols write SetGallerieCols;
     property GallerieH:Word read FGallerieH write SetGallerieH;
     property GallerieW:Word read FGallerieW write SetGallerieW;
+    property CenterVideo1File:String read FCenterVideo1File write SetCenterVideo1File;
+    property CenterVideo2File:String read FCenterVideo2File write SetCenterVideo2File;
+    property CenterVideo3File:String read FCenterVideo3File write SetCenterVideo3File;
+    property CenterVideo4File:String read FCenterVideo4File write SetCenterVideo4File;
+    property CenterPanelLeft:Word read FCenterPanelLeft write SetCenterPanelLeft;
+    property CenterPanelTop:Word read FCenterPanelTop write SetCenterPanelTop;
+    property CenterPanelHeight:Word read FCenterPanelHeight write SetCenterPanelHeight;
+    property CenterPanelWidth:Word read FCenterPanelWidth write SetCenterPanelWidth;
+    property visible:Boolean read Fvisible write Setvisible;
     constructor Create(AOwner : TComponent); override;
     destructor done;
     procedure LoadButtonImage(Filename:string);
     procedure DisplayButton;
     procedure DisplayAdress;
+    procedure SwitchAdress;
+    function Adressvisible:boolean;
+    procedure HideAdress;
     procedure DisplayLoading;
-    Procedure LoadButton(FileId:string);
+    Procedure ReLoadButton;
+    Procedure LoadButton(FileId:string;reload:boolean=False);
     Procedure SaveButton(FileId:string);
     Procedure SaveButtonSelf;
+    procedure ShowLed;
+    Procedure HideLed;
+    Procedure SetInfoLED(onOff:boolean);
     procedure ButtomMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
-
+    function FontToString(tfd:TFont):String;
+    procedure StringToFont(tfd:TFont;s:String);
+    procedure AddCenterVideos(Liste:TCenterVideoList;MF:Tform);
   end;
 
 implementation
 
-uses system.inifiles,TSS_FE_DataForm;
+uses system.inifiles,TSS_FE_DataForm,TSS_FE_MainScreen;
+
+procedure TTSS_Button.AddCenterVideos(Liste:TCenterVideoList;MF:Tform);
+begin
+  if FButtonActive then begin
+    if self.FCenterVideo1File<>'' then begin
+      Liste.AddVideo(self.FCenterVideo1File);
+      TMainDisplayForm(MF).CenterVideoNames.items.add('[BTN_V] '+self.FCenterVideo1File);
+    end;
+    if self.FCenterVideo2File<>'' then begin
+      Liste.AddVideo(self.FCenterVideo2File);
+      TMainDisplayForm(MF).CenterVideoNames.items.add('[BTN_V] '+self.FCenterVideo2File);
+    end;
+    if self.FCenterVideo3File<>'' then begin
+      Liste.AddVideo(self.FCenterVideo3File);
+      TMainDisplayForm(MF).CenterVideoNames.items.add('[BTN_V] '+self.FCenterVideo3File);
+    end;
+    if self.FCenterVideo4File<>'' then begin
+      Liste.AddVideo(self.FCenterVideo4File);
+      TMainDisplayForm(MF).CenterVideoNames.items.add('[BTN_V] '+self.FCenterVideo4File);
+    end;
+  end;
+end;
+
+function TTSS_Button.Adressvisible: boolean;
+begin
+  result:=ButtonimgFilename='';
+end;
 
 procedure TTSS_Button.ButtomMouseUp(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: Integer);
@@ -198,7 +349,12 @@ begin
   if button=mbRight then begin
     if dataform.Debugmode then begin
       DataForm.PopupButton:=self;
-      FBtnPopup.Popup(self.left+x,self.top+y);
+      FBtnPopup.Popup(self.parent.left+self.left+self.parent.top+x,self.top+y);
+    end else begin
+      if FCanEditButton then begin
+        DataForm.PopupButton:=self;
+        FBtnPopup.Popup(self.parent.left+self.left+self.parent.top+x,self.top+y);
+      end;
     end;
   end else begin
     FOnMouseUp(sender,Button,Shift,x,y);
@@ -212,24 +368,33 @@ begin
   BGShape:=TShape.Create(self);
   BGImage:=TImage.Create(self);
   FBtnPopup:=TPopupMenu.Create(nil);
+  FBtnEditPopup:=TPopupMenu.Create(nil);
   BGImage.Stretch:=true;
   BGImage.Hide;
   NameText:=TLabel.Create(self);
   NameText.AutoSize:=false;
   NameText.Alignment:=tacenter;
   NameText.Hide;
+  NameText.Caption:='';
+  TextZeile1_Text_s:=NameText.font;
   Name2Text:=TLabel.Create(self);
   Name2Text.AutoSize:=false;
   Name2Text.Alignment:=tacenter;
   Name2Text.Hide;
+  Name2Text.Caption:='';
+  TextZeile2_Text_s:=Name2Text.font;
   StrassenText:=TLabel.Create(self);
   StrassenText.AutoSize:=false;
   StrassenText.Alignment:=tacenter;
   StrassenText.Hide;
+  StrassenText.Caption:='';
+  TextZeile3_Text_s:=StrassenText.font;
   PlzOrtText:=TLabel.Create(Self);
   PlzOrtText.AutoSize:=false;
   PlzOrtText.Alignment:=tacenter;
   PlzOrtText.Hide;
+  PlzOrtText.Caption:='';
+  TextZeile4_Text_S:=PlzOrtText.font;
   LoadText:=TLabel.Create(Self);
   LoadText.Caption:='Der Inhalt des Partners ist'#13#10'neu überarbeitet worden und '#13#10' wird noch aus dem Internet geladen !'#13#10'Bitte etwas Gedult.';
   LoadText.Height:=40;
@@ -239,6 +404,10 @@ begin
   BtnTimer:=Ttimer.Create(AOwner);
   BtnTimer.Enabled:=false;
   BtnTimer.OnTimer:=MyBtnOnTimer;
+  InfoLed:=TdsLed.Create(AOwner);
+  InfoLed.Width:=2;
+  InfoLed.Height:=2;
+  InfoLed.Visible:=false;
 end;
 
 procedure TTSS_Button.DisplayAdress;
@@ -252,7 +421,17 @@ end;
 
 procedure TTSS_Button.DisplayButton;
 begin
-  Self.Visible:=true;
+//  Self.Visible:=true;
+  self.Visible:=FButtonvisible;
+  BGImage.visible:=FButtonvisible;
+  self.parent.Repaint;
+    if FButtonimgFilename<>'' then begin
+      BGImage.visible:=true;
+    end;
+    NameText.Visible:=TextZeile1_Text_V or Adressvisible;
+    Name2Text.Visible:=TextZeile2_Text_V or Adressvisible;
+    StrassenText.Visible:=TextZeile3_Text_V or Adressvisible;
+    PlzOrtText.Visible:=TextZeile4_Text_V or Adressvisible;
   if FHasTimer then begin
     BtnTimer.Enabled:=true;
   end;
@@ -269,6 +448,27 @@ begin
   freeandnil(FGalerieFiles);
 end;
 
+function TTSS_Button.FontToString(tfd: TFont): String;
+var st:String;
+begin
+  st:=tfd.Name+';'+inttostr(tfd.Size)+';'+BoolToStr(fsBold in tfd.Style)+';'+BoolToStr(fsitalic in tfd.Style)+';'+colortostring(tfd.Color);
+  Result:=st;
+end;
+
+procedure TTSS_Button.HideAdress;
+begin
+  BGShape.Hide;
+  NameText.Hide;
+  Name2Text.Hide;
+  PlzOrtText.Hide;
+  StrassenText.Hide;
+end;
+
+procedure TTSS_Button.HideLed;
+begin
+  InfoLed.Visible:=false;
+end;
+
 procedure TTSS_Button.Mouseup(Button: TMouseButton; Shift: TShiftState;X, Y: Integer);
 begin
   MessageBeep(0);
@@ -280,7 +480,14 @@ begin
   FOnMouseUp(BGImage,mbleft,[],0,0);
 end;
 
-procedure TTSS_Button.LoadButton(FileId:string);
+procedure TTSS_Button.ReLoadButton;
+begin
+  self.LoadButton(FButtonFileId);
+  self.BGImage.repaint;
+  self.repaint;
+end;
+
+procedure TTSS_Button.LoadButton(FileId:string;reload:boolean=False);
 var f:Textfile;ReadString:string;
 var IniPl:TIniFile;
 begin
@@ -363,13 +570,18 @@ begin
     self.ClickPlayListKundenuid:=IniPl.ReadString('Customer','Kunden_UID','');
     //self.Name:=IniPl.ReadString('Customer','Kundennummer','');
     self.KundenName:=IniPl.ReadString('Customer','Kundenname_1','');
+    NameText.caption:=self.KundenName;
     self.KundenName2:=IniPl.ReadString('Customer','Kundenname_2','');
+    Name2Text.caption:=self.KundenName2;
     self.KundenStrasse:=IniPl.ReadString('Customer','Kundenstrasse','');
+    StrassenText.caption:=self.KundenStrasse;
     self.KundenPLZOrt:=IniPl.ReadString('Customer','KundenplzOrt','');
+    PlzOrtText.caption:=self.KundenPLZOrt;
     //Edit13.text:=IniPl.ReadString('Button','Image','');
     self.ButtonimgFilename:=IniPl.ReadString('Button','Image','');
     self.Name:=IniPl.ReadString('Button','Name','');
     //Edit8.text:=IniPl.ReadString('Button','Tag','');
+    self.Buttonvisible:=IniPl.ReadBool('Button','visible',true);
     self.ButtonActive:=IniPl.ReadBool('Aktion','Clickable',False);
     self.ButtonActionInActive:=IniPl.ReadInteger('Aktion','ClickInAktive',0);
     self.ButtonActionActive:=IniPl.ReadInteger('Aktion','ClickAktive',0);
@@ -392,14 +604,168 @@ begin
     if ClickPlayListGalleryid<>'' then self.FGalerieFiles.LoadFromFile(ExtractFilePath(fileid)+'\'+ClickPlayListGalleryid+'.GAL');
     self.FHasTimer:=IniPl.ReadBool('Button','TimerOn',False);
     self.TimerTime:=IniPl.ReadInteger('Button','TimerTime',0);
+    self.FCanEditButton:=IniPl.ReadBool('Button','CanEdit',False);
     self.FButtonActionShowImage:=IniPl.ReadString('Data','ClickShowImage','');
     self.FButtonActionShowImageX:=IniPl.ReadInteger('Data','ClickShowImageX',0);
     self.FButtonActionShowImageY:=IniPl.ReadInteger('Data','ClickShowImageY',0);
     self.FButtonActionShowImageW:=IniPl.ReadInteger('Data','ClickShowImageW',0);
     self.FButtonActionShowImageH:=IniPl.ReadInteger('Data','ClickShowImageH',0);
     self.FButtonActionShowImageTimer:=IniPl.ReadInteger('Data','ClickShowImageTime',0);
+    self.CenterVideo1File:=IniPl.ReadString('Data','CenterVideo1','');
+    self.CenterVideo2File:=IniPl.ReadString('Data','CenterVideo2','');
+    self.CenterVideo3File:=IniPl.ReadString('Data','CenterVideo3','');
+    self.CenterVideo4File:=IniPl.ReadString('Data','CenterVideo4','');
+    self.TextZeile1_Text:=IniPl.ReadString('TextData','TextZeile_1_Text','');
+    self.TextZeile2_Text:=IniPl.ReadString('TextData','TextZeile_2_Text','');
+    self.TextZeile3_Text:=IniPl.ReadString('TextData','TextZeile_3_Text','');
+    self.TextZeile4_Text:=IniPl.ReadString('TextData','TextZeile_4_Text','');
+    ReadString:=IniPl.Readstring('TextData','TextZeile_1_Text_X','0');
+    if readstring[1]='+' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(self.left+strtoint(readstring));
+    end else
+    if readstring[1]='-' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(self.left-strtoint(readstring));
+    end else
+    if readstring[1]='A' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(strtoint(readstring));
+    end else begin
+      readstring:=inttostr(self.left+strtoint(readstring));
+    end;
+
+    self.TextZeile1_Text_x:=strtoint(readstring);
+    ReadString:=IniPl.Readstring('TextData','TextZeile_2_Text_X','0');
+    if readstring[1]='+' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(self.left+strtoint(readstring));
+    end else
+    if readstring[1]='-' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(self.left-strtoint(readstring));
+    end else
+    if readstring[1]='A' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(strtoint(readstring));
+    end else begin
+      readstring:=inttostr(self.left+strtoint(readstring));
+    end;
+    self.TextZeile2_Text_x:=strtoint(readstring);
+
+    ReadString:=IniPl.Readstring('TextData','TextZeile_3_Text_X','0');
+    if readstring[1]='+' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(self.left+strtoint(readstring));
+    end else
+    if readstring[1]='-' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(self.left-strtoint(readstring));
+    end else
+    if readstring[1]='A' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(strtoint(readstring));
+    end else begin
+      readstring:=inttostr(self.left+strtoint(readstring));
+    end;
+    self.TextZeile3_Text_x:=strtoint(readstring);
+
+    ReadString:=IniPl.Readstring('TextData','TextZeile_4_Text_X','0');
+    if readstring[1]='+' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(self.left+strtoint(readstring));
+    end else
+    if readstring[1]='-' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(self.left-strtoint(readstring));
+    end else
+    if readstring[1]='A' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(strtoint(readstring));
+    end else begin
+      readstring:=inttostr(self.left+strtoint(readstring));
+    end;
+    self.TextZeile4_Text_x:=strtoint(readstring);
+
+    ReadString:=IniPl.Readstring('TextData','TextZeile_1_Text_Y','0');
+    if readstring[1]='+' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(self.top+strtoint(readstring));
+    end else
+    if readstring[1]='-' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(self.top-strtoint(readstring));
+    end else
+    if readstring[1]='A' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(strtoint(readstring));
+    end else begin
+      readstring:=inttostr(self.top+strtoint(readstring));
+    end;
+    self.TextZeile1_Text_y:=strtoint(readstring);
+
+    ReadString:=IniPl.Readstring('TextData','TextZeile_2_Text_Y','0');
+    if readstring[1]='+' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(self.top+strtoint(readstring));
+    end else
+    if readstring[1]='-' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(self.top-strtoint(readstring));
+    end else
+    if readstring[1]='A' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(strtoint(readstring));
+    end else begin
+      readstring:=inttostr(self.top+strtoint(readstring));
+    end;
+    self.TextZeile2_Text_y:=strtoint(readstring);
+
+    ReadString:=IniPl.Readstring('TextData','TextZeile_3_Text_Y','0');
+    if readstring[1]='+' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(self.top+strtoint(readstring));
+    end else
+    if readstring[1]='-' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(self.top-strtoint(readstring));
+    end else
+    if readstring[1]='A' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(strtoint(readstring));
+    end else begin
+      readstring:=inttostr(self.top+strtoint(readstring));
+    end;
+    self.TextZeile3_Text_y:=strtoint(readstring);
+
+    ReadString:=IniPl.Readstring('TextData','TextZeile_4_Text_Y','0');
+    if readstring[1]='+' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(self.top+strtoint(readstring));
+    end else
+    if readstring[1]='-' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(self.top-strtoint(readstring));
+    end else
+    if readstring[1]='A' then begin
+      delete(readstring,1,1);
+      readstring:=inttostr(strtoint(readstring));
+    end else begin
+      readstring:=inttostr(self.top+strtoint(readstring));
+    end;
+    self.TextZeile4_Text_y:=strtoint(readstring);
+
+    self.StringtoFont(TextZeile1_Text_s,IniPl.Readstring('TextData','TextZeile_1_Text_S',''));
+    self.StringtoFont(TextZeile2_Text_s,IniPl.Readstring('TextData','TextZeile_2_Text_S',''));
+    self.StringtoFont(TextZeile3_Text_s,IniPl.Readstring('TextData','TextZeile_3_Text_S',''));
+    self.StringtoFont(TextZeile4_Text_s,IniPl.Readstring('TextData','TextZeile_4_Text_S',''));
+    self.TextZeile1_Text_v:=IniPl.ReadBool('TextData','TextZeile_1_Text_V',False);
+    self.TextZeile2_Text_v:=IniPl.ReadBool('TextData','TextZeile_2_Text_V',False);
+    self.TextZeile3_Text_v:=IniPl.ReadBool('TextData','TextZeile_3_Text_V',False);
+    self.TextZeile4_Text_v:=IniPl.ReadBool('TextData','TextZeile_4_Text_V',False);
+    PlzOrtText.caption:=self.KundenPLZOrt;
   end;
-  DataForm.ButtonList.Add(self);
+  if not reload then DataForm.ButtonList.Add(self);
 end;
 
 procedure TTSS_Button.LoadButtonImage(Filename: string);
@@ -414,12 +780,12 @@ begin
   end;
   FButtonimgFilename:=FileName;
   BGImage.Repaint;
-  BGImage.Show;
+  BGImage.visible:=FButtonvisible;
   BGShape.Hide;
-  NameText.Hide;
-  Name2Text.Hide;
-  StrassenText.Hide;
-  PlzOrtText.Hide;
+  NameText.visible:=TextZeile1_Text_V;
+  Name2Text.visible:=TextZeile2_Text_V;
+  StrassenText.visible:=TextZeile3_Text_V;
+  PlzOrtText.visible:=TextZeile4_Text_V;
   LoadText.Hide;
 end;
 
@@ -442,6 +808,7 @@ begin
     //Edit13.text:=IniPl.ReadString('Button','Image','');
     IniPl.WriteString('Button','Image',self.ButtonimgFilename);
     IniPl.WriteString('Button','Name',self.Name);
+    IniPl.WriteBool('Button','visible',self.Buttonvisible);
     //Edit8.text:=IniPl.ReadString('Button','Tag','');
     IniPl.WriteBool('Aktion','Clickable',self.ButtonActive);
     IniPl.WriteInteger('Aktion','ClickInAktive',self.ButtonActionInActive);
@@ -465,17 +832,47 @@ begin
     //if ClickPlayListGalleryid<>'' then self.FGalerieFiles.LoadFromFile(ExtractFilePath(fileid)+'\'+ClickPlayListGalleryid+'.GAL');
     IniPl.WriteBool('Button','TimerOn',self.FHasTimer);
     IniPl.Writeinteger('Button','TimerTime',self.TimerTime);
+    IniPl.WriteBool('Button','CanEdit',self.FCanEditButton);
+    IniPl.WriteString('Data','CenterVideo1',self.FCenterVideo1File);
+    IniPl.WriteString('Data','CenterVideo2',self.FCenterVideo2File);
+    IniPl.WriteString('Data','CenterVideo3',self.FCenterVideo3File);
+    IniPl.WriteString('Data','CenterVideo4',self.FCenterVideo4File);
     IniPl.WriteString('Data','ClickShowImage',self.FButtonActionShowImage);
     IniPl.WriteInteger('Data','ClickShowImageX',self.FButtonActionShowImageX);
     IniPl.WriteInteger('Data','ClickShowImageY',self.FButtonActionShowImageY);
     IniPl.WriteInteger('Data','ClickShowImageW',self.FButtonActionShowImageW);
     IniPl.WriteInteger('Data','ClickShowImageH',self.FButtonActionShowImageH);
     IniPl.WriteInteger('Data','ClickShowImageTime',self.FButtonActionShowImageTimer);
+    IniPl.WriteString('TextData','TextZeile_1_Text',self.TextZeile1_Text);
+    IniPl.WriteString('TextData','TextZeile_2_Text',self.TextZeile2_Text);
+    IniPl.WriteString('TextData','TextZeile_3_Text',self.TextZeile3_Text);
+    IniPl.WriteString('TextData','TextZeile_4_Text',self.TextZeile4_Text);
+    IniPl.WriteInteger('TextData','TextZeile_1_Text_X',self.TextZeile1_Text_x);
+    IniPl.WriteInteger('TextData','TextZeile_2_Text_X',self.TextZeile2_Text_x);
+    IniPl.WriteInteger('TextData','TextZeile_3_Text_X',self.TextZeile3_Text_x);
+    IniPl.WriteInteger('TextData','TextZeile_4_Text_X',self.TextZeile4_Text_x);
+    IniPl.WriteInteger('TextData','TextZeile_1_Text_Y',self.TextZeile1_Text_y);
+    IniPl.WriteInteger('TextData','TextZeile_2_Text_Y',self.TextZeile2_Text_y);
+    IniPl.WriteInteger('TextData','TextZeile_3_Text_Y',self.TextZeile3_Text_y);
+    IniPl.WriteInteger('TextData','TextZeile_4_Text_Y',self.TextZeile4_Text_y);
+    IniPl.WriteString('TextData','TextZeile_1_Text_S',self.FontToString(self.TextZeile1_Text_s));
+    IniPl.WriteString('TextData','TextZeile_2_Text_S',self.FontToString(self.TextZeile2_Text_s));
+    IniPl.WriteString('TextData','TextZeile_3_Text_S',self.FontToString(self.TextZeile3_Text_s));
+    IniPl.WriteString('TextData','TextZeile_4_Text_S',self.FontToString(self.TextZeile4_Text_s));
+    IniPl.WriteBool('TextData','TextZeile_1_Text_V',self.TextZeile1_Text_v);
+    IniPl.WriteBool('TextData','TextZeile_2_Text_V',self.TextZeile2_Text_v);
+    IniPl.WriteBool('TextData','TextZeile_3_Text_V',self.TextZeile3_Text_v);
+    IniPl.WriteBool('TextData','TextZeile_4_Text_V',self.TextZeile4_Text_v);
 end;
 
 procedure TTSS_Button.SaveButtonSelf;
 begin
   SaveButton(FButtonFileId);
+end;
+
+procedure TTSS_Button.SetBtnEditPopup(const Value: TPopupMenu);
+begin
+  FBtnEditPopup := Value;
 end;
 
 procedure TTSS_Button.SetBtnPopup(const Value: TPopupMenu);
@@ -548,9 +945,60 @@ begin
   FButtonFileId := Value;
 end;
 
+procedure TTSS_Button.SetButtonvisible(const Value: boolean);
+begin
+  FButtonvisible := Value;
+end;
+
 procedure TTSS_Button.Setbutton_media_id(const Value: integer);
 begin
   Fbutton_media_id := Value;
+end;
+
+procedure TTSS_Button.SetCanEditButton(const Value: Boolean);
+begin
+  FCanEditButton := Value;
+  InfoLed.LedOn := Value;
+end;
+
+procedure TTSS_Button.SetCenterPanelHeight(const Value: Word);
+begin
+  FCenterPanelHeight := Value;
+end;
+
+procedure TTSS_Button.SetCenterPanelLeft(const Value: Word);
+begin
+  FCenterPanelLeft := Value;
+end;
+
+procedure TTSS_Button.SetCenterPanelTop(const Value: Word);
+begin
+  FCenterPanelTop := Value;
+end;
+
+procedure TTSS_Button.SetCenterPanelWidth(const Value: Word);
+begin
+  FCenterPanelWidth := Value;
+end;
+
+procedure TTSS_Button.SetCenterVideo1File(const Value: String);
+begin
+  FCenterVideo1File := Value;
+end;
+
+procedure TTSS_Button.SetCenterVideo2File(const Value: String);
+begin
+  FCenterVideo2File := Value;
+end;
+
+procedure TTSS_Button.SetCenterVideo3File(const Value: String);
+begin
+  FCenterVideo3File := Value;
+end;
+
+procedure TTSS_Button.SetCenterVideo4File(const Value: String);
+begin
+  FCenterVideo4File := Value;
 end;
 
 procedure TTSS_Button.SetClickPlayListCount(const Value: integer);
@@ -614,6 +1062,7 @@ begin
   StrassenText.top:=FTop+(Value div 2) + 15;
   PlzOrtText.top:=FTop+(Value div 2) + 30;
   LoadText.Top:=FTop+Value-45;
+  InfoLed.top:=FTop;
 end;
 
 procedure TTSS_Button.SetFKundenName(const Value: String);
@@ -642,14 +1091,15 @@ end;
 
 procedure TTSS_Button.SetFLeft(const Value: Integer);
 begin
-  FLeft := Value;
-  BGShape.Left:=Value;
-  BGImage.Left:=Value;
-  NameText.Left:=Value+5;
-  Name2Text.Left:=Value+5;
-  StrassenText.Left:=Value+5;
-  PlzOrtText.Left:=Value+5;
-  LoadText.Left:=Value+5;
+  FLeft := Value+DataForm.ButtonOffset_X;
+  BGShape.Left:=FLeft;
+  BGImage.Left:=FLeft;
+  NameText.Left:=FLeft+5;
+  Name2Text.Left:=FLeft+5;
+  StrassenText.Left:=FLeft+5;
+  PlzOrtText.Left:=FLeft+5;
+  LoadText.Left:=FLeft+5;
+  InfoLed.left:=FLeft;
 end;
 
 procedure TTSS_Button.SetFName(const Value: String);
@@ -658,9 +1108,13 @@ begin
   BGShape.Name:=Value+'_BGS';
   BGImage.Name:=Value+'_BGI';
   NameText.Name:=Value+'_NTXT';
+  NameText.caption:=FKundenName;
   Name2Text.Name:=Value+'_N2TXT';
+  Name2Text.caption:=FKundenName2;
   StrassenText.Name:=Value+'_STXT';
+  StrassenText.caption:=FKundenStrasse;
   PlzOrtText.Name:=Value+'_PTXT';
+  PlzOrtText.caption:=KundenPLZOrt;
   LoadText.Name:=Value+'_LD';
 end;
 
@@ -678,21 +1132,21 @@ end;
 
 procedure TTSS_Button.SetFtop(const Value: Integer);
 begin
-  Ftop := Value;
-  BGShape.Top:=Value;
-  BGImage.Top:=Value+1;
-  NameText.Top:=Value+5;
-  Name2Text.Top:=Value+20;
-  StrassenText.Top:=Value+35;
-  PlzOrtText.Top:=Value+55;
-  LoadText.Top:=Value+FHeight-15;
+  FTop := Value+DataForm.ButtonOffset_Y;
+  BGShape.Top:=FTop;
+  BGImage.Top:=Ftop+1;
+  NameText.Top:=Ftop+5;
+  Name2Text.Top:=Ftop+20;
+  StrassenText.Top:=Ftop+35;
+  PlzOrtText.Top:=Ftop+55;
+  LoadText.Top:=Ftop+FHeight-15;
 end;
 
 procedure TTSS_Button.SetFWidth(const Value: integer);
 begin
   FWidth := Value;
   BGShape.width:=value;
-  BGImage.width:=value-2;
+  BGImage.width:=value-1;
   NameText.width:=Value-10;
   Name2Text.width:=Value-10;
   StrassenText.width:=Value-10;
@@ -752,6 +1206,11 @@ begin
   FInfoBox := Value;
 end;
 
+procedure TTSS_Button.SetInfoLED(onOff: boolean);
+begin
+  InfoLed.Visible:=onoff;
+end;
+
 procedure TTSS_Button.Setmedia_typ(const Value: integer);
 begin
   Fmedia_typ := Value;
@@ -769,6 +1228,11 @@ begin
   PlzOrtText.OnMouseUp:=ButtomMouseUp;
 end;
 
+procedure TTSS_Button.SetShowAddress(const Value: boolean);
+begin
+  FShowAddress := Value;
+end;
+
 procedure TTSS_Button.SetTag(const Value: word);
 begin
   FTag := Value;
@@ -780,15 +1244,245 @@ begin
   StrassenText.Tag:=value;
 end;
 
+
+procedure TTSS_Button.SetTextZeile1_Text(const Value: String);
+begin
+  FTextZeile1_Text := Value;
+end;
+
+procedure TTSS_Button.SetTextZeile1_Text_S(const Value: Tfont);
+begin
+  FTextZeile1_Text_S := Value;
+  NameText.font:=value;
+  NameText.Height:=value.Size*5;
+end;
+
+procedure TTSS_Button.SetTextZeile1_Text_V(const Value: Boolean);
+begin
+  FTextZeile1_Text_V := Value;
+  if value then begin
+    if ButtonimgFilename='' then begin
+      if NameText.Caption='' then Begin
+        NameText.Caption:=FTextZeile1_Text;
+        NameText.Left:=FTextZeile1_Text_X;
+        NameText.Top:=FTextZeile1_Text_Y;
+        NameText.Font:=FTextZeile1_Text_S;
+        NameText.Visible:=True;
+      End;
+    end;
+  end else begin
+    NameText.Visible:=False;
+  end;
+end;
+
+procedure TTSS_Button.SetTextZeile1_Text_X(const Value: Integer);
+begin
+  FTextZeile1_Text_X := Value;
+end;
+
+procedure TTSS_Button.SetTextZeile1_Text_Y(const Value: Integer);
+begin
+  FTextZeile1_Text_Y := Value;
+end;
+
+procedure TTSS_Button.SetTextZeile2_Text(const Value: String);
+begin
+  FTextZeile2_Text := Value;
+end;
+
+
+procedure TTSS_Button.SetTextZeile2_Text_S(const Value: Tfont);
+begin
+  FTextZeile2_Text_S := Value;
+  Name2Text.font:=value;
+  Name2Text.Height:=value.Size*5;
+end;
+
+procedure TTSS_Button.SetTextZeile2_Text_V(const Value: Boolean);
+begin
+  FTextZeile2_Text_V := Value;
+  if value then begin
+    if ButtonimgFilename='' then begin
+      if Name2Text.Caption='' then Begin
+        Name2Text.Caption:=FTextZeile2_Text;
+        Name2Text.Left:=FTextZeile2_Text_X;
+        Name2Text.Top:=FTextZeile2_Text_Y;
+        Name2Text.Font:=FTextZeile2_Text_S;
+        Name2Text.Visible:=True;
+      End else begin
+        Name2Text.Left:=FTextZeile2_Text_X;
+        Name2Text.Top:=FTextZeile2_Text_Y;
+        Name2Text.Font:=FTextZeile2_Text_S;
+        Name2Text.Visible:=True;
+      End;
+    end;
+  end else begin
+    Name2Text.Visible:=False;
+  end;
+end;
+
+procedure TTSS_Button.SetTextZeile2_Text_X(const Value: Integer);
+begin
+  FTextZeile2_Text_X := Value;
+end;
+
+procedure TTSS_Button.SetTextZeile2_Text_Y(const Value: Integer);
+begin
+  FTextZeile2_Text_Y := Value;
+end;
+
+procedure TTSS_Button.SetTextZeile3_Text(const Value: String);
+begin
+  FTextZeile3_Text := Value;
+end;
+
+procedure TTSS_Button.SetTextZeile3_Text_S(const Value: TFont);
+begin
+  FTextZeile3_Text_S := Value;
+  StrassenText.font:=value;
+  StrassenText.Height:=value.Size*5;
+end;
+
+procedure TTSS_Button.SetTextZeile3_Text_V(const Value: Boolean);
+begin
+  FTextZeile3_Text_V := Value;
+  if value then begin
+    if ButtonimgFilename='' then begin
+      if StrassenText.Caption='' then Begin
+        StrassenText.Caption:=FTextZeile3_Text;
+        StrassenText.Left:=FTextZeile3_Text_X;
+        StrassenText.Top:=FTextZeile3_Text_Y;
+        StrassenText.Font:=FTextZeile3_Text_S;
+        StrassenText.Visible:=True;
+      End else begin
+        StrassenText.Left:=FTextZeile3_Text_X;
+        StrassenText.Top:=FTextZeile3_Text_Y;
+        StrassenText.Font:=FTextZeile3_Text_S;
+        StrassenText.Visible:=True;
+      End;
+    end;
+  end else begin
+    StrassenText.Visible:=False;
+  end;
+end;
+
+procedure TTSS_Button.SetTextZeile3_Text_X(const Value: Integer);
+begin
+  FTextZeile3_Text_X := Value;
+end;
+
+procedure TTSS_Button.SetTextZeile3_Text_Y(const Value: Integer);
+begin
+  FTextZeile3_Text_Y := Value;
+end;
+
+procedure TTSS_Button.SetTextZeile4_Text(const Value: String);
+begin
+  FTextZeile4_Text := Value;
+end;
+
+procedure TTSS_Button.SetTextZeile4_Text_S(const Value: TFont);
+begin
+  FTextZeile4_Text_S := Value;
+  PlzOrtText.font:=value;
+  PlzOrtText.Height:=value.Size*5;
+end;
+
+procedure TTSS_Button.SetTextZeile4_Text_V(const Value: Boolean);
+begin
+  FTextZeile4_Text_V := Value;
+  if value then begin
+    if ButtonimgFilename='' then begin
+      if PlzOrtText.Caption='' then Begin
+        PLzOrtText.Caption:=FTextZeile4_Text;
+        PLzOrtText.Left:=FTextZeile4_Text_X;
+        PLzOrtText.Top:=FTextZeile4_Text_Y;
+        PLzOrtText.Font:=FTextZeile4_Text_S;
+        PLzOrtText.Visible:=True;
+      End else begin
+        PLzOrtText.Left:=FTextZeile4_Text_X;
+        PLzOrtText.Top:=FTextZeile4_Text_Y;
+        PLzOrtText.Font:=FTextZeile4_Text_S;
+        PLzOrtText.Visible:=True;
+      end;
+    end;
+  end else begin
+    PLzOrtText.Visible:=False;
+  end;
+end;
+
+procedure TTSS_Button.SetTextZeile4_Text_X(const Value: Integer);
+begin
+  FTextZeile4_Text_X := Value;
+end;
+
+procedure TTSS_Button.SetTextZeile4_Text_Y(const Value: Integer);
+begin
+  FTextZeile4_Text_Y := Value;
+end;
+
 procedure TTSS_Button.SetTimerTime(const Value: Word);
 begin
   FTimerTime := Value;
   BtnTimer.Interval:=Value;
 end;
 
+procedure TTSS_Button.Setvisible(const Value: Boolean);
+begin
+  inherited;
+  Fvisible := Value;
+  BGImage.Visible:=value;
+  BGShape.Visible:=value;
+end;
+
 procedure TTSS_Button.Setzuordnung_typ(const Value: integeR);
 begin
   Fzuordnung_typ := Value;
+end;
+
+procedure TTSS_Button.ShowLed;
+begin
+  InfoLed.Visible:=True;
+end;
+
+procedure TTSS_Button.StringToFont(tfd: TFont; s: String);
+var s1,ss:string;
+begin
+  ss:=s;
+  if ss>'' then begin
+    s1:=copy(ss,1,pos(';',ss)-1);
+    delete(ss,1,pos(';',ss));
+    tfd.Name:=s1;
+    s1:=copy(ss,1,pos(';',ss)-1);
+    delete(ss,1,pos(';',ss));
+    tfd.Size:=strtoint(s1);
+    s1:=copy(ss,1,pos(';',ss)-1);
+    delete(ss,1,pos(';',ss));
+    if StrToBool(s1) then tfd.Style:=[fsbold];
+    s1:=copy(ss,1,pos(';',ss)-1);
+    delete(ss,1,pos(';',ss));
+    if StrToBool(s1) then tfd.Style:=tfd.Style+[fsitalic];
+    if pos(';',ss)>0 then s1:=copy(ss,1,pos(';',ss)-1) else s1:=ss;
+    if pos(';',ss)>0 then delete(ss,1,pos(';',ss)) else ss:='';
+    tfd.Color:=Stringtocolor(s1);
+  end;
+end;
+
+procedure TTSS_Button.SwitchAdress;
+begin
+  if BGShape.Visible then begin
+    BGShape.HidE;
+    NameText.HidE;
+    Name2Text.HidE;
+    PlzOrtText.HidE;
+    StrassenText.HidE;
+  end else begin
+    BGShape.Show;
+    NameText.Show;
+    Name2Text.Show;
+    PlzOrtText.Show;
+    StrassenText.Show;
+  end;
 end;
 
 end.

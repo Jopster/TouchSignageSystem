@@ -2,40 +2,23 @@ program TSS_FE;
 
 uses
   Vcl.Forms,
-  TSS_FE_LoadScreen in 'TSS_FE_LoadScreen.pas' {MainForm},
-  TSS_FE_MainScreen in 'TSS_FE_MainScreen.pas' {MainDisplayForm},
-  TSS_FE_DataForm in 'TSS_FE_DataForm.pas' {DataForm},
-  TSS_FE_SetupForm in 'TSS_FE_SetupForm.pas' {SetupForm},
-  TSS_ButtonClass_unit in 'TSS_ButtonClass_unit.pas',
-  TSS_HttpButtonImgLoadThread_unit in 'TSS_HttpButtonImgLoadThread_unit.pas',
-  TSS_FE_SyncMediaForm in 'TSS_FE_SyncMediaForm.pas' {SyncMediaForm},
-  TSS_FE_SyncMediaClass in 'TSS_FE_SyncMediaClass.pas',
-  TSS_DisplayClass_unit in 'TSS_DisplayClass_unit.pas',
-  TSS_FTPFileLoadThread_unit in 'TSS_FTPFileLoadThread_unit.pas',
-  TSS_BE_FTPForm_unit in 'TSS_BE_FTPForm_unit.pas' {TSS_BE_FTPForm},
-  TSS_FE_BlackoutForm_unit in 'TSS_FE_BlackoutForm_unit.pas' {BlackoutForm},
-  TSS_Wifi in 'TSS_Wifi.pas',
-  MahUSB in 'MahUSB.pas',
-  TSS_FE_Updateform in 'TSS_FE_Updateform.pas' {UpdateForm},
-  TSS_FE_FTPLoadFormunit in 'TSS_FE_FTPLoadFormunit.pas' {TSS_FE_FTPLoadForm},
-  TSS_FE_Specialform_unit in 'TSS_FE_Specialform_unit.pas' {TSS_FE_Specialform},
-  TSS_FE_XtraBtnForm_unit in 'TSS_FE_XtraBtnForm_unit.pas' {TSS_FE_XtraBtnForm};
+  TSS_FE_Runner_Mainform in 'TSS_FE_Runner_Mainform.pas' {TSS_Runner_Mainform},
+  TSS_FE_Runner_Dataform_unit in 'TSS_FE_Runner_Dataform_unit.pas' {TSS_FE_Runner_Dataform},
+  TSS_FE_Runner_Helpform_unit in 'TSS_FE_Runner_Helpform_unit.pas' {Helpform},
+  TSS_FE_Runner_Settingsform_unit in 'TSS_FE_Runner_Settingsform_unit.pas' {TSS_FE_Runner_Settingsform},
+  TSS_OS_IconClass_unit in 'TSS_OS_IconClass_unit.pas',
+  TSS_Scheduler_unit in 'TSS_Scheduler_unit.pas',
+  TSS_FE_ToolboxForm_unit in 'TSS_FE_ToolboxForm_unit.pas' {TSS_FE_Toolboxform};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TMainForm, MainForm);
-  Application.CreateForm(TMainDisplayForm, MainDisplayForm);
-  Application.CreateForm(TDataForm, DataForm);
-  Application.CreateForm(TSetupForm, SetupForm);
-  Application.CreateForm(TSyncMediaForm, SyncMediaForm);
-  Application.CreateForm(TTSS_BE_FTPForm, TSS_BE_FTPForm);
-  Application.CreateForm(TBlackoutForm, BlackoutForm);
-  Application.CreateForm(TUpdateForm, UpdateForm);
-  Application.CreateForm(TTSS_FE_FTPLoadForm, TSS_FE_FTPLoadForm);
-  Application.CreateForm(TTSS_FE_Specialform, TSS_FE_Specialform);
-  Application.CreateForm(TTSS_FE_XtraBtnForm, TSS_FE_XtraBtnForm);
+  Application.CreateForm(TTSS_Runner_Mainform, TSS_Runner_Mainform);
+  Application.CreateForm(TTSS_FE_Runner_Dataform, TSS_FE_Runner_Dataform);
+  Application.CreateForm(THelpform, Helpform);
+  Application.CreateForm(TTSS_FE_Runner_Settingsform, TSS_FE_Runner_Settingsform);
+  Application.CreateForm(TTSS_FE_Toolboxform, TSS_FE_Toolboxform);
   Application.Run;
 end.

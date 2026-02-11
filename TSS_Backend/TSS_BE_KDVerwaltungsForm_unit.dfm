@@ -1,0 +1,174 @@
+object KDVerwaltungsForm: TKDVerwaltungsForm
+  Left = 0
+  Top = 0
+  Caption = 'Kundendaten verwalten'
+  ClientHeight = 752
+  ClientWidth = 1254
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object SpeedButton1: TSpeedButton
+    Left = 262
+    Top = 703
+    Width = 137
+    Height = 22
+    Caption = 'Auswahl l'#246'schen'
+    Glyph.Data = {
+      36030000424D3603000000000000360000002800000010000000100000000100
+      1800000000000003000000000000000000000000000000000000FFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000404040202020000000FFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000040
+      4040A0A0A0A0A0A0808080606060202020FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFF000000404040A0A0A0C0C0C0C0C0C0A0A0A08080808080804040
+      40FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF202020404040A0A0A0B0B0B080A080C0
+      C0C0C0C0C0A0A0A0808080808080606060000000FFFFFFFFFFFFFFFFFFFFFFFF
+      404040C0C0C090B09020802000800000800090B090A0A0A08080808080808080
+      80000000FFFFFFFFFFFFFFFFFFFFFFFF707070309030B0B0B090B09060A060B0
+      B0B060A060A0A0A0808080808080808080202020FFFFFFFFFFFFFFFFFFFFFFFF
+      A0A0A000800090B090C0C0C0C0C0C0C0C0C090B090A0A0A08080808080808080
+      80404040FFFFFFFFFFFFFFFFFF202020B0B0B0309030008000C0C0C090B09000
+      800060A060A0A0A0808080808080808080606060000000FFFFFFFFFFFF404040
+      C0C0C060A06060A06060A06030903030903060A060A0A0A08080808080808080
+      80808080000000FFFFFFFFFFFF707070C0C0C0C0C0C0C0C0C0B0B0B060A060DF
+      DFDFDFDFDFDFDFDFCFCFCFBFBFBF808080808080202020FFFFFFFFFFFFA0A0A0
+      C0C0C0C0C0C0C0C0C0DFDFDFDFDFDFEFAFAFFF7F7FFF7F7FFF7F7FDFDFDFAFAF
+      AFCFCFCF5F5F5FFFFFFF202020B0B0B0C0C0C0DFDFDFDFDFDFEFAFAFFF7F7FFF
+      7F7FFF7F7FFF7F7FFF7F7FFFFFFF6F6F6FCFCFCF5F5F5FFFFFFF404040DFDFDF
+      BFBFBF808080BFBFBFFFBFBFFF7F7FFF7F7FFF7F7FFF7F7FFF7F7FFFFFFF2020
+      20202020FFFFFFFFFFFF404040DFDFDF808080808080BFBFBFFFBFBFFF7F7FFF
+      7F7FFF7F7FFFBFBF5F5F5F404040000000FFFFFFFFFFFFFFFFFFFFFFFF404040
+      BFBFBFBFBFBFBFBFBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFAFAFAF303030FFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2020209F9F9FBFBFBFBFBFBFBF
+      BFBFBFBFBFBFBFBF404040FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+    OnClick = SpeedButton1Click
+  end
+  object SpeedButton18: TSpeedButton
+    Left = 8
+    Top = 703
+    Width = 121
+    Height = 22
+    Caption = 'Neu anlegen'
+    Glyph.Data = {
+      D6000000424DD60000000000000076000000280000000C0000000C0000000100
+      0400000000006000000000000000000000001000000000000000000000000000
+      BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00300000000000
+      0000307888888880000030F777777780000030F777077780000030F777077780
+      000030F700000780000030F777077780000030F777077780000030F777777780
+      000030FFFFFFFF70000030000000000000003333333333330000}
+    OnClick = SpeedButton18Click
+  end
+  object SpeedButton2: TSpeedButton
+    Left = 135
+    Top = 703
+    Width = 121
+    Height = 22
+    Caption = 'bearbeiten'
+    Glyph.Data = {
+      D6000000424DD60000000000000076000000280000000C0000000C0000000100
+      0400000000006000000000000000000000001000000000000000000000000000
+      BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00300000000000
+      0000307888888880000030F777777780000030F777077780000030F777077780
+      000030F700000780000030F777077780000030F777077780000030F777777780
+      000030FFFFFFFF70000030000000000000003333333333330000}
+    OnClick = SpeedButton2Click
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 8
+    Width = 1225
+    Height = 689
+    DataSource = TSS_BE_KundenTable_Source
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'kundennummer'
+        Title.Caption = 'KNummer'
+        Width = 50
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'kundenkurzname'
+        Title.Caption = 'Kurz-Name'
+        Width = 250
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'kunden_name_1'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'kunden_name_2'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'kunden_strasse'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'kunden_hausnr'
+        Width = 40
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'kunden_plz'
+        Width = 40
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'kunden_ort'
+        Width = 150
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'kunden_telefon1'
+        Width = 150
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'kunden_mail'
+        Width = 200
+        Visible = True
+      end>
+  end
+  object TSS_BE_KundenTable: TFDTable
+    Active = True
+    IndexFieldNames = 'kunden_id'
+    Connection = TSS_BE_DataForm.TSS_FE_Connection
+    UpdateOptions.UpdateTableName = 'logumedia.kunden'
+    TableName = 'logumedia.kunden'
+    Left = 960
+    Top = 8
+  end
+  object TSS_BE_KundenTable_Source: TDataSource
+    DataSet = TSS_BE_KundenTable
+    Left = 960
+    Top = 56
+  end
+end

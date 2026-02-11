@@ -1,0 +1,1690 @@
+object TSS_BE_ButtonGenForm: TTSS_BE_ButtonGenForm
+  Left = 0
+  Top = 0
+  Caption = 'Button Generator'
+  ClientHeight = 909
+  ClientWidth = 1396
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnClose = FormClose
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object SpeedButton1: TSpeedButton
+    Left = 8
+    Top = 0
+    Width = 145
+    Height = 34
+    Caption = 'Konfiguration einlesen '
+    OnClick = SpeedButton1Click
+  end
+  object SpeedButton2: TSpeedButton
+    Left = 159
+    Top = -1
+    Width = 145
+    Height = 34
+    Caption = 'Konfiguration abspeichern'
+    OnClick = SpeedButton2Click
+  end
+  object Label1: TLabel
+    Left = 8
+    Top = 58
+    Width = 67
+    Height = 13
+    Caption = 'Button UUID :'
+  end
+  object Label2: TLabel
+    Left = 8
+    Top = 84
+    Width = 69
+    Height = 13
+    Caption = 'Button Name :'
+  end
+  object Label15: TLabel
+    Left = 310
+    Top = 85
+    Width = 60
+    Height = 13
+    Caption = 'Button Tag :'
+  end
+  object SpeedButton3: TSpeedButton
+    Left = 464
+    Top = 54
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      42010000424D4201000000000000760000002800000011000000110000000100
+      040000000000CC00000000000000000000001000000010000000000000000000
+      BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+      7777700000007777777777777777700000007770000000000007700000007770
+      FFFFFFFFFF07700000007770FFFFFFFFFF07700000007770FF4FF4FFFF077000
+      00007770FF4FF4FFFF07700000007770F4444444FF07700000007770FFF4FF4F
+      FF07700000007770FFF4FF4FFF07700000007770FF4444444F07700000007770
+      FFFF4FF4FF07700000007770000F4FF4FF077000000077770F0FFFFFFF077000
+      00007777700FFFFFFF0770000000777777000000000770000000777777777777
+      777770000000}
+    OnClick = SpeedButton3Click
+  end
+  object Label34: TLabel
+    Left = 936
+    Top = 48
+    Width = 109
+    Height = 13
+    Caption = 'gespeicherte Buttons :'
+  end
+  object SpeedButton16: TSpeedButton
+    Left = 936
+    Top = 0
+    Width = 145
+    Height = 34
+    Caption = 'ButtonListe einlesen'
+    OnClick = SpeedButton16Click
+  end
+  object SpeedButton17: TSpeedButton
+    Left = 1087
+    Top = -1
+    Width = 145
+    Height = 34
+    Caption = 'ButtonListe Speichern'
+    OnClick = SpeedButton17Click
+  end
+  object SpeedButton18: TSpeedButton
+    Left = 907
+    Top = 219
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      36010000424D3601000000000000760000002800000013000000100000000100
+      040000000000C0000000C40E0000C40E00001000000000000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FFFFFFFFFFFF
+      FFFFFFF00000FFFFFFFFFFFFFFFFFFF00000FFFFFFFFFFFFFFFFFFF00000FFFF
+      FFF4FFFFFF4FFFF00000FFFFFF44FFFFF44FFFF00000FFFFF424FFFF424FFFF0
+      0000FFFF4224FFF4224FFFF00000FFF42224FF42224FFFF00000FF422224F422
+      224FFFF00000FFF42224FF42224FFFF00000FFFF4224FFF4224FFFF00000FFFF
+      F424FFFF424FFFF00000FFFFFF44FFFFF44FFFF00000FFFFFFF4FFFFFF4FFFF0
+      0000FFFFFFFFFFFFFFFFFFF00000FFFFFFFFFFFFFFFFFFF00000}
+  end
+  object SpeedButton19: TSpeedButton
+    Left = 310
+    Top = 0
+    Width = 139
+    Height = 33
+    Caption = 'In Buttonliste'
+    Glyph.Data = {
+      F6000000424DF60000000000000076000000280000000B000000100000000100
+      04000000000080000000C40E0000C40E00001000000000000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FFFFFFFFFFF0
+      0000FFFFFFFFFFF00000FFF4FFFFFFF00000FFF44FFFFFF00000FFF424FFFFF0
+      0000FFF4224FFFF00000FFF42224FFF00000FFF422224FF00000FFF42224FFF0
+      0000FFF4224FFFF00000FFF424FFFFF00000FFF44FFFFFF00000FFF4FFFFFFF0
+      0000FFFFFFFFFFF00000FFFFFFFFFFF00000FFFFFFFFFFF00000}
+    OnClick = SpeedButton19Click
+  end
+  object SpeedButton20: TSpeedButton
+    Left = 1311
+    Top = 121
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      DE000000424DDE0000000000000076000000280000000D0000000D0000000100
+      0400000000006800000000000000000000001000000010000000000000000000
+      BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+      7000777777777777700077777777777770007777777777777000777777777777
+      70007700000000077000770CCCCCCC0770007700000000077000777777777777
+      7000777777777777700077777777777770007777777777777000777777777777
+      7000}
+    OnClick = SpeedButton20Click
+  end
+  object SpeedButton21: TSpeedButton
+    Left = 907
+    Top = 148
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      E6000000424DE60000000000000076000000280000000E0000000E0000000100
+      0400000000007000000000000000000000001000000010000000000000000000
+      BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDDDDDDDDDDD
+      DD00DDDDD4444DDDDD00DDD44444444DDD00DD444DDDD444DD00DD44DDDDDD44
+      DD00D44DDDDDDDD44D00D44DDDDDDDD44D00D44DDDDDDDD44D00D44DDDDDDDD4
+      4D00DD44DDDD4D44DD00DD44DDDD4444DD00DDDDDDDD444DDD00DDDDDDDD4444
+      DD00DDDDDDDDDDDDDD00}
+    OnClick = SpeedButton21Click
+  end
+  object SpeedButton22: TSpeedButton
+    Left = 1311
+    Top = 149
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      76010000424D7601000000000000760000002800000020000000100000000100
+      04000000000000010000120B0000120B00001000000000000000000000000000
+      800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00500005000555
+      555557777F777555F55500000000555055557777777755F75555005500055055
+      555577F5777F57555555005550055555555577FF577F5FF55555500550050055
+      5555577FF77577FF555555005050110555555577F757777FF555555505099910
+      555555FF75777777FF555005550999910555577F5F77777775F5500505509990
+      3055577F75F77777575F55005055090B030555775755777575755555555550B0
+      B03055555F555757575755550555550B0B335555755555757555555555555550
+      BBB35555F55555575F555550555555550BBB55575555555575F5555555555555
+      50BB555555555555575F555555555555550B5555555555555575}
+    NumGlyphs = 2
+    OnClick = SpeedButton22Click
+  end
+  object SpeedButton23: TSpeedButton
+    Left = 900
+    Top = 8
+    Width = 23
+    Height = 22
+  end
+  object SpeedButton24: TSpeedButton
+    Left = 871
+    Top = 8
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      42010000424D4201000000000000760000002800000011000000110000000100
+      040000000000CC00000000000000000000001000000010000000000000000000
+      BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+      7777700000007777777777777777700000007770000000000007700000007770
+      FFFFFFFFFF07700000007770FFFFFFFFFF07700000007770FF4FF4FFFF077000
+      00007770FF4FF4FFFF07700000007770F4444444FF07700000007770FFF4FF4F
+      FF07700000007770FFF4FF4FFF07700000007770FF4444444F07700000007770
+      FFFF4FF4FF07700000007770000F4FF4FF077000000077770F0FFFFFFF077000
+      00007777700FFFFFFF0770000000777777000000000770000000777777777777
+      777770000000}
+    OnClick = SpeedButton24Click
+  end
+  object SpeedButton25: TSpeedButton
+    Left = 1304
+    Top = 93
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      42010000424D4201000000000000760000002800000011000000110000000100
+      040000000000CC00000000000000000000001000000010000000000000000000
+      BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+      7777700000007777777777777777700000007770000000000007700000007770
+      FFFFFFFFFF07700000007770FFFFFFFFFF07700000007770FF4FF4FFFF077000
+      00007770FF4FF4FFFF07700000007770F4444444FF07700000007770FFF4FF4F
+      FF07700000007770FFF4FF4FFF07700000007770FF4444444F07700000007770
+      FFFF4FF4FF07700000007770000F4FF4FF077000000077770F0FFFFFFF077000
+      00007777700FFFFFFF0770000000777777000000000770000000777777777777
+      777770000000}
+    OnClick = SpeedButton25Click
+  end
+  object SpeedButton26: TSpeedButton
+    Left = 8
+    Top = 33
+    Width = 145
+    Height = 22
+    Caption = 'Neu - L'#246'schen'
+    OnClick = SpeedButton26Click
+  end
+  object SpeedButton27: TSpeedButton
+    Left = 520
+    Top = 293
+    Width = 410
+    Height = 22
+    Glyph.Data = {
+      36010000424D3601000000000000760000002800000013000000100000000100
+      040000000000C0000000C40E0000C40E00001000000000000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FFFFFFFFFFFF
+      FFFFFFF00000FFFFFFFFFFFFFFFFFFF00000FFFFFFFFFFFFFFFFFFF00000FFFF
+      FFF4FFFFFF4FFFF00000FFFFFF44FFFFF44FFFF00000FFFFF424FFFF424FFFF0
+      0000FFFF4224FFF4224FFFF00000FFF42224FF42224FFFF00000FF422224F422
+      224FFFF00000FFF42224FF42224FFFF00000FFFF4224FFF4224FFFF00000FFFF
+      F424FFFF424FFFF00000FFFFFF44FFFFF44FFFF00000FFFFFFF4FFFFFF4FFFF0
+      0000FFFFFFFFFFFFFFFFFFF00000FFFFFFFFFFFFFFFFFFF00000}
+    OnClick = SpeedButton27Click
+  end
+  object SpeedButton28: TSpeedButton
+    Left = 517
+    Top = 367
+    Width = 145
+    Height = 34
+    Caption = 'ButtonListe einlesen'
+    OnClick = SpeedButton28Click
+  end
+  object SpeedButton29: TSpeedButton
+    Left = 756
+    Top = 367
+    Width = 145
+    Height = 34
+    Caption = 'ButtonListe Speichern'
+    OnClick = SpeedButton29Click
+  end
+  object SpeedButton30: TSpeedButton
+    Left = 907
+    Top = 436
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      DE000000424DDE0000000000000076000000280000000D0000000D0000000100
+      0400000000006800000000000000000000001000000010000000000000000000
+      BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+      7000777777777777700077777777777770007777777777777000777777777777
+      70007700000000077000770CCCCCCC0770007700000000077000777777777777
+      7000777777777777700077777777777770007777777777777000777777777777
+      7000}
+    OnClick = SpeedButton30Click
+  end
+  object SpeedButton31: TSpeedButton
+    Left = 907
+    Top = 464
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      76010000424D7601000000000000760000002800000020000000100000000100
+      04000000000000010000120B0000120B00001000000000000000000000000000
+      800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00500005000555
+      555557777F777555F55500000000555055557777777755F75555005500055055
+      555577F5777F57555555005550055555555577FF577F5FF55555500550050055
+      5555577FF77577FF555555005050110555555577F757777FF555555505099910
+      555555FF75777777FF555005550999910555577F5F77777775F5500505509990
+      3055577F75F77777575F55005055090B030555775755777575755555555550B0
+      B03055555F555757575755550555550B0B335555755555757555555555555550
+      BBB35555F55555575F555550555555550BBB55575555555575F5555555555555
+      50BB555555555555575F555555555555550B5555555555555575}
+    NumGlyphs = 2
+    OnClick = SpeedButton31Click
+  end
+  object SpeedButton32: TSpeedButton
+    Left = 907
+    Top = 408
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      DE000000424DDE0000000000000076000000280000000D0000000D0000000100
+      0400000000006800000000000000000000001000000010000000000000000000
+      BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+      700077777777777770007777700077777000777770C077777000777770C07777
+      7000770000C000077000770CCCCCCC077000770000C000077000777770C07777
+      7000777770C07777700077777000777770007777777777777000777777777777
+      7000}
+    OnClick = SpeedButton32Click
+  end
+  object Label35: TLabel
+    Left = 8
+    Top = 128
+    Width = 78
+    Height = 13
+    Caption = 'Center Video 1 :'
+  end
+  object Label36: TLabel
+    Left = 8
+    Top = 147
+    Width = 78
+    Height = 13
+    Caption = 'Center Video 2 :'
+  end
+  object Label37: TLabel
+    Left = 8
+    Top = 166
+    Width = 78
+    Height = 13
+    Caption = 'Center Video 3 :'
+  end
+  object Label38: TLabel
+    Left = 8
+    Top = 185
+    Width = 78
+    Height = 13
+    Caption = 'Center Video 4 :'
+  end
+  object SpeedButton33: TSpeedButton
+    Left = 464
+    Top = 125
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      F6000000424DF600000000000000760000002800000010000000100000000100
+      0400000000008000000000000000000000001000000010000000000000000000
+      BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+      7777770000000000007770330770000330777033077000033077703307700003
+      30777033000000033077703333333333307770330000000330777030FFFFFFF0
+      30777030FFFCFFF030777030FFCCCFF030777030FFFCCCF777777030FFFFCCC7
+      C777700000077CCCC7777777777777CCC777777777777CCCC777}
+    OnClick = SpeedButton33Click
+  end
+  object SpeedButton34: TSpeedButton
+    Left = 488
+    Top = 125
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      36010000424D3601000000000000760000002800000013000000100000000100
+      040000000000C0000000C40E0000C40E00001000000000000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FFFFFFFFFFFF
+      FFFFFFF00000FFFFFFFFFFFFFFFFFFF00000FFFFFFFFFFFFFFFFFFF00000FFFF
+      4FFFFFF4FFFFFFF00000FFFF44FFFFF44FFFFFF00000FFFF424FFFF424FFFFF0
+      0000FFFF4224FFF4224FFFF00000FFFF42224FF42224FFF00000FFFF422224F4
+      22224FF00000FFFF42224FF42224FFF00000FFFF4224FFF4224FFFF00000FFFF
+      424FFFF424FFFFF00000FFFF44FFFFF44FFFFFF00000FFFF4FFFFFF4FFFFFFF0
+      0000FFFFFFFFFFFFFFFFFFF00000FFFFFFFFFFFFFFFFFFF00000}
+    OnClick = SpeedButton34Click
+  end
+  object SpeedButton35: TSpeedButton
+    Left = 464
+    Top = 143
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      F6000000424DF600000000000000760000002800000010000000100000000100
+      0400000000008000000000000000000000001000000010000000000000000000
+      BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+      7777770000000000007770330770000330777033077000033077703307700003
+      30777033000000033077703333333333307770330000000330777030FFFFFFF0
+      30777030FFFCFFF030777030FFCCCFF030777030FFFCCCF777777030FFFFCCC7
+      C777700000077CCCC7777777777777CCC777777777777CCCC777}
+    OnClick = SpeedButton35Click
+  end
+  object SpeedButton36: TSpeedButton
+    Left = 488
+    Top = 143
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      36010000424D3601000000000000760000002800000013000000100000000100
+      040000000000C0000000C40E0000C40E00001000000000000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FFFFFFFFFFFF
+      FFFFFFF00000FFFFFFFFFFFFFFFFFFF00000FFFFFFFFFFFFFFFFFFF00000FFFF
+      4FFFFFF4FFFFFFF00000FFFF44FFFFF44FFFFFF00000FFFF424FFFF424FFFFF0
+      0000FFFF4224FFF4224FFFF00000FFFF42224FF42224FFF00000FFFF422224F4
+      22224FF00000FFFF42224FF42224FFF00000FFFF4224FFF4224FFFF00000FFFF
+      424FFFF424FFFFF00000FFFF44FFFFF44FFFFFF00000FFFF4FFFFFF4FFFFFFF0
+      0000FFFFFFFFFFFFFFFFFFF00000FFFFFFFFFFFFFFFFFFF00000}
+    OnClick = SpeedButton36Click
+  end
+  object SpeedButton37: TSpeedButton
+    Left = 464
+    Top = 163
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      F6000000424DF600000000000000760000002800000010000000100000000100
+      0400000000008000000000000000000000001000000010000000000000000000
+      BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+      7777770000000000007770330770000330777033077000033077703307700003
+      30777033000000033077703333333333307770330000000330777030FFFFFFF0
+      30777030FFFCFFF030777030FFCCCFF030777030FFFCCCF777777030FFFFCCC7
+      C777700000077CCCC7777777777777CCC777777777777CCCC777}
+    OnClick = SpeedButton37Click
+  end
+  object SpeedButton38: TSpeedButton
+    Left = 488
+    Top = 163
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      36010000424D3601000000000000760000002800000013000000100000000100
+      040000000000C0000000C40E0000C40E00001000000000000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FFFFFFFFFFFF
+      FFFFFFF00000FFFFFFFFFFFFFFFFFFF00000FFFFFFFFFFFFFFFFFFF00000FFFF
+      4FFFFFF4FFFFFFF00000FFFF44FFFFF44FFFFFF00000FFFF424FFFF424FFFFF0
+      0000FFFF4224FFF4224FFFF00000FFFF42224FF42224FFF00000FFFF422224F4
+      22224FF00000FFFF42224FF42224FFF00000FFFF4224FFF4224FFFF00000FFFF
+      424FFFF424FFFFF00000FFFF44FFFFF44FFFFFF00000FFFF4FFFFFF4FFFFFFF0
+      0000FFFFFFFFFFFFFFFFFFF00000FFFFFFFFFFFFFFFFFFF00000}
+    OnClick = SpeedButton38Click
+  end
+  object SpeedButton39: TSpeedButton
+    Left = 464
+    Top = 182
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      F6000000424DF600000000000000760000002800000010000000100000000100
+      0400000000008000000000000000000000001000000010000000000000000000
+      BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+      7777770000000000007770330770000330777033077000033077703307700003
+      30777033000000033077703333333333307770330000000330777030FFFFFFF0
+      30777030FFFCFFF030777030FFCCCFF030777030FFFCCCF777777030FFFFCCC7
+      C777700000077CCCC7777777777777CCC777777777777CCCC777}
+    OnClick = SpeedButton39Click
+  end
+  object SpeedButton40: TSpeedButton
+    Left = 488
+    Top = 182
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      36010000424D3601000000000000760000002800000013000000100000000100
+      040000000000C0000000C40E0000C40E00001000000000000000000000000000
+      8000008000000080800080000000800080008080000080808000C0C0C0000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FFFFFFFFFFFF
+      FFFFFFF00000FFFFFFFFFFFFFFFFFFF00000FFFFFFFFFFFFFFFFFFF00000FFFF
+      4FFFFFF4FFFFFFF00000FFFF44FFFFF44FFFFFF00000FFFF424FFFF424FFFFF0
+      0000FFFF4224FFF4224FFFF00000FFFF42224FF42224FFF00000FFFF422224F4
+      22224FF00000FFFF42224FF42224FFF00000FFFF4224FFF4224FFFF00000FFFF
+      424FFFF424FFFFF00000FFFF44FFFFF44FFFFFF00000FFFF4FFFFFF4FFFFFFF0
+      0000FFFFFFFFFFFFFFFFFFF00000FFFFFFFFFFFFFFFFFFF00000}
+    OnClick = SpeedButton40Click
+  end
+  object SpeedButton13: TSpeedButton
+    Left = 907
+    Top = 705
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      DE000000424DDE0000000000000076000000280000000D0000000D0000000100
+      0400000000006800000000000000000000001000000010000000000000000000
+      BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+      700077777777777770007777700077777000777770C077777000777770C07777
+      7000770000C000077000770CCCCCCC077000770000C000077000777770C07777
+      7000777770C07777700077777000777770007777777777777000777777777777
+      7000}
+    OnClick = SpeedButton13Click
+  end
+  object SpeedButton41: TSpeedButton
+    Left = 907
+    Top = 733
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      DE000000424DDE0000000000000076000000280000000D0000000D0000000100
+      0400000000006800000000000000000000001000000010000000000000000000
+      BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+      7000777777777777700077777777777770007777777777777000777777777777
+      70007700000000077000770CCCCCCC0770007700000000077000777777777777
+      7000777777777777700077777777777770007777777777777000777777777777
+      7000}
+    OnClick = SpeedButton41Click
+  end
+  object SpeedButton42: TSpeedButton
+    Left = 517
+    Top = 666
+    Width = 145
+    Height = 34
+    Caption = 'Gallerie einlesen'
+    OnClick = SpeedButton42Click
+  end
+  object SpeedButton43: TSpeedButton
+    Left = 756
+    Top = 665
+    Width = 145
+    Height = 34
+    Caption = 'Gallerie Speichern'
+    OnClick = SpeedButton43Click
+  end
+  object SpeedButton44: TSpeedButton
+    Left = 907
+    Top = 637
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      F6000000424DF600000000000000760000002800000010000000100000000100
+      0400000000008000000000000000000000001000000010000000000000000000
+      BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+      7777770000000000007770330770000330777033077000033077703307700003
+      30777033000000033077703333333333307770330000000330777030FFFFFFF0
+      30777030FFFCFFF030777030FFCCCFF030777030FFFCCCF777777030FFFFCCC7
+      C777700000077CCCC7777777777777CCC777777777777CCCC777}
+    OnClick = SpeedButton6Click
+  end
+  object Label40: TLabel
+    Left = 645
+    Top = 315
+    Width = 144
+    Height = 19
+    Caption = 'Zentralle Videos :'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object SpeedButton45: TSpeedButton
+    Left = 907
+    Top = 338
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      F6000000424DF600000000000000760000002800000010000000100000000100
+      0400000000008000000000000000000000001000000010000000000000000000
+      BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+      7777770000000000007770330770000330777033077000033077703307700003
+      30777033000000033077703333333333307770330000000330777030FFFFFFF0
+      30777030FFFCFFF030777030FFCCCFF030777030FFFCCCF777777030FFFFCCC7
+      C777700000077CCCC7777777777777CCC777777777777CCCC777}
+  end
+  object Label41: TLabel
+    Left = 637
+    Top = 614
+    Width = 132
+    Height = 19
+    Caption = 'Gallerieinhalte :'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object Label39: TLabel
+    Left = 8
+    Top = 229
+    Width = 94
+    Height = 13
+    Caption = 'Button Timer aktiv :'
+  end
+  object Label42: TLabel
+    Left = 254
+    Top = 229
+    Width = 93
+    Height = 13
+    Caption = 'Button Timer Time :'
+  end
+  object Label43: TLabel
+    Left = 8
+    Top = 252
+    Width = 91
+    Height = 13
+    Caption = 'Button Klick-Bild x :'
+  end
+  object Label44: TLabel
+    Left = 256
+    Top = 252
+    Width = 91
+    Height = 13
+    Caption = 'Button Klick-Bild y :'
+  end
+  object Label45: TLabel
+    Left = 8
+    Top = 295
+    Width = 107
+    Height = 13
+    Caption = 'Button Klick-Bild Time :'
+  end
+  object Label46: TLabel
+    Left = 8
+    Top = 316
+    Width = 110
+    Height = 13
+    Caption = 'Button Klick-Bild Datei :'
+  end
+  object SpeedButton47: TSpeedButton
+    Left = 464
+    Top = 313
+    Width = 23
+    Height = 22
+    Glyph.Data = {
+      F6000000424DF600000000000000760000002800000010000000100000000100
+      0400000000008000000000000000000000001000000010000000000000000000
+      BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+      7777770000000000007770330770000330777033077000033077703307700003
+      30777033000000033077703333333333307770330000000330777030FFFFFFF0
+      30777030FFFCFFF030777030FFCCCFF030777030FFFCCCF777777030FFFFCCC7
+      C777700000077CCCC7777777777777CCC777777777777CCCC777}
+    OnClick = SpeedButton47Click
+  end
+  object Label47: TLabel
+    Left = 256
+    Top = 272
+    Width = 92
+    Height = 13
+    Caption = 'Button Klick-Bild H :'
+  end
+  object Label48: TLabel
+    Left = 8
+    Top = 272
+    Width = 95
+    Height = 13
+    Caption = 'Button Klick-Bild W :'
+  end
+  object Edit1: TEdit
+    Left = 176
+    Top = 55
+    Width = 289
+    Height = 21
+    TabOrder = 0
+  end
+  object Edit2: TEdit
+    Left = 176
+    Top = 82
+    Width = 128
+    Height = 21
+    TabOrder = 1
+  end
+  object Edit8: TEdit
+    Left = 376
+    Top = 82
+    Width = 89
+    Height = 21
+    TabOrder = 2
+  end
+  object RadioButton1: TRadioButton
+    Left = 528
+    Top = 51
+    Width = 145
+    Height = 17
+    Caption = 'Horizontal Ausrichtung'
+    Checked = True
+    TabOrder = 3
+    TabStop = True
+    OnClick = RadioButton1Click
+  end
+  object RadioButton2: TRadioButton
+    Left = 696
+    Top = 51
+    Width = 145
+    Height = 17
+    Caption = 'Vertikal Ausrichtung'
+    TabOrder = 4
+    OnClick = RadioButton2Click
+  end
+  object ListBox1: TListBox
+    Left = 936
+    Top = 121
+    Width = 369
+    Height = 770
+    ItemHeight = 13
+    TabOrder = 5
+  end
+  object ScrollBox1: TScrollBox
+    Left = 520
+    Top = 70
+    Width = 384
+    Height = 216
+    TabOrder = 6
+  end
+  object Edit24: TEdit
+    Left = -51
+    Top = -23
+    Width = 289
+    Height = 21
+    TabOrder = 7
+  end
+  object Edit25: TEdit
+    Left = 520
+    Top = 8
+    Width = 345
+    Height = 21
+    TabOrder = 8
+  end
+  object Edit26: TEdit
+    Left = 936
+    Top = 67
+    Width = 369
+    Height = 21
+    TabOrder = 9
+  end
+  object Edit27: TEdit
+    Left = 936
+    Top = 94
+    Width = 369
+    Height = 21
+    TabOrder = 10
+  end
+  object ListBox2: TListBox
+    Left = 517
+    Top = 407
+    Width = 384
+    Height = 207
+    ItemHeight = 13
+    TabOrder = 11
+  end
+  object Edit28: TEdit
+    Left = 176
+    Top = 125
+    Width = 289
+    Height = 21
+    TabOrder = 12
+  end
+  object Edit29: TEdit
+    Left = 176
+    Top = 144
+    Width = 289
+    Height = 21
+    TabOrder = 13
+  end
+  object Edit30: TEdit
+    Left = 176
+    Top = 163
+    Width = 289
+    Height = 21
+    TabOrder = 14
+  end
+  object Edit31: TEdit
+    Left = 176
+    Top = 182
+    Width = 289
+    Height = 21
+    TabOrder = 15
+  end
+  object ListBox3: TListBox
+    Left = 517
+    Top = 706
+    Width = 384
+    Height = 185
+    ItemHeight = 13
+    TabOrder = 16
+  end
+  object Edit32: TEdit
+    Left = 517
+    Top = 639
+    Width = 384
+    Height = 21
+    TabOrder = 17
+  end
+  object Edit33: TEdit
+    Left = 517
+    Top = 340
+    Width = 384
+    Height = 21
+    TabOrder = 18
+  end
+  object CheckBox2: TCheckBox
+    Left = 176
+    Top = 228
+    Width = 57
+    Height = 17
+    TabOrder = 19
+  end
+  object Edit34: TEdit
+    Left = 393
+    Top = 228
+    Width = 72
+    Height = 21
+    TabOrder = 20
+  end
+  object Edit35: TEdit
+    Left = 176
+    Top = 249
+    Width = 72
+    Height = 21
+    TabOrder = 21
+  end
+  object Edit36: TEdit
+    Left = 393
+    Top = 249
+    Width = 72
+    Height = 21
+    TabOrder = 22
+  end
+  object Edit37: TEdit
+    Left = 176
+    Top = 293
+    Width = 72
+    Height = 21
+    TabOrder = 23
+  end
+  object Edit38: TEdit
+    Left = 176
+    Top = 313
+    Width = 289
+    Height = 21
+    TabOrder = 24
+  end
+  object Edit39: TEdit
+    Left = 393
+    Top = 269
+    Width = 72
+    Height = 21
+    TabOrder = 25
+  end
+  object Edit40: TEdit
+    Left = 176
+    Top = 269
+    Width = 72
+    Height = 21
+    TabOrder = 26
+  end
+  object TabbedNotebook1: TTabbedNotebook
+    Left = 199
+    Top = 74
+    Width = 570
+    Height = 751
+    PageIndex = 2
+    TabFont.Charset = DEFAULT_CHARSET
+    TabFont.Color = clBtnText
+    TabFont.Height = -11
+    TabFont.Name = 'Tahoma'
+    TabFont.Style = []
+    TabOrder = 27
+    object TTabPage
+      Left = 4
+      Top = 24
+      Caption = 'Standard'
+      object Label3: TLabel
+        Left = 8
+        Top = 9
+        Width = 91
+        Height = 13
+        Caption = 'Button Position : X '
+      end
+      object Label4: TLabel
+        Left = 8
+        Top = 37
+        Width = 88
+        Height = 13
+        Caption = 'Button Position : Y'
+      end
+      object Label5: TLabel
+        Left = 260
+        Top = 10
+        Width = 31
+        Height = 13
+        Caption = ' Breite'
+      end
+      object Label6: TLabel
+        Left = 260
+        Top = 37
+        Width = 28
+        Height = 13
+        Caption = ' H'#246'he'
+      end
+      object Label7: TLabel
+        Left = 389
+        Top = 12
+        Width = 30
+        Height = 13
+        Caption = 'x * 96'
+      end
+      object Label8: TLabel
+        Left = 389
+        Top = 39
+        Width = 30
+        Height = 13
+        Caption = 'x * 96'
+      end
+      object ComboBox1: TComboBox
+        Left = 317
+        Top = 7
+        Width = 57
+        Height = 21
+        TabOrder = 0
+        Text = 'ComboBox1'
+        Items.Strings = (
+          '96'
+          '144'
+          '192'
+          '240'
+          '288'
+          '336')
+      end
+      object ComboBox2: TComboBox
+        Left = 317
+        Top = 34
+        Width = 57
+        Height = 21
+        TabOrder = 1
+        Text = 'ComboBox1'
+        Items.Strings = (
+          '96'
+          '144'
+          '192'
+          '240'
+          '288'
+          '336')
+      end
+      object ComboBox3: TComboBox
+        Left = 176
+        Top = 7
+        Width = 57
+        Height = 21
+        TabOrder = 2
+        Text = 'ComboBox1'
+        Items.Strings = (
+          '0'
+          '48'
+          '96'
+          '144'
+          '192'
+          '240'
+          '288'
+          '336'
+          '384'
+          '432'
+          '480'
+          '528'
+          '576'
+          '624'
+          '672'
+          '720'
+          '768'
+          '816'
+          '864'
+          '912'
+          '960'
+          '1008'
+          '1056'
+          '1104'
+          '1152'
+          '1200'
+          '1248'
+          '1296'
+          '1344'
+          '1392'
+          '1440'
+          '1488'
+          '1536'
+          '1584'
+          '1632'
+          '1680'
+          '1728'
+          '1776'
+          '1824'
+          '1872'
+          '1920')
+      end
+      object ComboBox4: TComboBox
+        Left = 176
+        Top = 34
+        Width = 57
+        Height = 21
+        TabOrder = 3
+        Text = 'ComboBox1'
+        Items.Strings = (
+          '0'
+          '48'
+          '96'
+          '144'
+          '192'
+          '240'
+          '288'
+          '336'
+          '384'
+          '432'
+          '480'
+          '528'
+          '576'
+          '624'
+          '672'
+          '720'
+          '768'
+          '816'
+          '864'
+          '912'
+          '960'
+          '1008'
+          '1056'
+          '1104'
+          '1152'
+          '1200'
+          '1248'
+          '1296'
+          '1344'
+          '1392'
+          '1440'
+          '1488'
+          '1536'
+          '1584'
+          '1632'
+          '1680'
+          '1728'
+          '1776'
+          '1824'
+          '1872'
+          '1920')
+      end
+    end
+    object TTabPage
+      Left = 4
+      Top = 24
+      Caption = 'Kundendaten'
+      object Label9: TLabel
+        Left = 3
+        Top = 32
+        Width = 84
+        Height = 13
+        Caption = 'Kundennummer : '
+      end
+      object Label10: TLabel
+        Left = 3
+        Top = 59
+        Width = 69
+        Height = 13
+        Caption = 'Kundenname :'
+      end
+      object Label11: TLabel
+        Left = 3
+        Top = 113
+        Width = 78
+        Height = 13
+        Caption = 'Kundenstrasse :'
+      end
+      object Label12: TLabel
+        Left = 3
+        Top = 140
+        Width = 73
+        Height = 13
+        Caption = 'KundenOrt/PLZ'
+      end
+      object Label13: TLabel
+        Left = 3
+        Top = 86
+        Width = 63
+        Height = 13
+        Caption = 'Kundentext :'
+      end
+      object Label28: TLabel
+        Left = 3
+        Top = 7
+        Width = 64
+        Height = 13
+        Caption = 'Kunden UID :'
+      end
+      object SpeedButton4: TSpeedButton
+        Left = 389
+        Top = 2
+        Width = 23
+        Height = 22
+        Glyph.Data = {
+          42010000424D4201000000000000760000002800000011000000110000000100
+          040000000000CC00000000000000000000001000000010000000000000000000
+          BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDDDDDDDDDDD
+          DDDDD0000000D00DDDDDDDDDDDDDD0000000D000DDDDDDDDDDDDD0000000DD00
+          0DDDDDDDDDDDD0000000DDD000D800008DDDD0000000DDDD0000777700DDD000
+          0000DDDDD08EE777780DD0000000DDDD807E77777708D0000000DDDD07E77777
+          7770D0000000DDDD077777777770D0000000DDDD077777777E70D0000000DDDD
+          077777777E70D0000000DDDD80777777EE08D0000000DDDDD08777EEE80DD000
+          0000DDDDDD00777700DDD0000000DDDDDDD800008DDDD0000000DDDDDDDDDDDD
+          DDDDD0000000}
+        OnClick = SpeedButton4Click
+      end
+      object SpeedButton5: TSpeedButton
+        Left = 418
+        Top = 2
+        Width = 23
+        Height = 22
+        Glyph.Data = {
+          DE000000424DDE0000000000000076000000280000000D0000000D0000000100
+          0400000000006800000000000000000000001000000010000000000000000000
+          BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+          700077777777777770007777700077777000777770C077777000777770C07777
+          7000770000C000077000770CCCCCCC077000770000C000077000777770C07777
+          7000777770C07777700077777000777770007777777777777000777777777777
+          7000}
+        OnClick = SpeedButton5Click
+      end
+      object Edit3: TEdit
+        Left = 94
+        Top = 30
+        Width = 289
+        Height = 21
+        TabOrder = 0
+      end
+      object Edit4: TEdit
+        Left = 94
+        Top = 57
+        Width = 289
+        Height = 21
+        TabOrder = 1
+      end
+      object Edit5: TEdit
+        Left = 94
+        Top = 111
+        Width = 289
+        Height = 21
+        TabOrder = 2
+      end
+      object Edit6: TEdit
+        Left = 94
+        Top = 138
+        Width = 289
+        Height = 21
+        TabOrder = 3
+      end
+      object Edit7: TEdit
+        Left = 94
+        Top = 84
+        Width = 289
+        Height = 21
+        TabOrder = 4
+      end
+      object Edit18: TEdit
+        Left = 94
+        Top = 3
+        Width = 289
+        Height = 21
+        TabOrder = 5
+      end
+    end
+    object TTabPage
+      Left = 4
+      Top = 24
+      Caption = 'Aussehen / Design'
+      object Image1: TImage
+        Left = 175
+        Top = 61
+        Width = 282
+        Height = 116
+        Stretch = True
+      end
+      object SpeedButton46: TSpeedButton
+        Left = 466
+        Top = 8
+        Width = 23
+        Height = 22
+        Glyph.Data = {
+          42010000424D4201000000000000760000002800000011000000110000000100
+          040000000000CC00000000000000000000001000000010000000000000000000
+          BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+          7777700000007777777777777777700000007770000000000007700000007770
+          FFFFFFFFFF07700000007770FFFFFFFFFF07700000007770FF4FF4FFFF077000
+          00007770FF4FF4FFFF07700000007770F4444444FF07700000007770FFF4FF4F
+          FF07700000007770FFF4FF4FFF07700000007770FF4444444F07700000007770
+          FFFF4FF4FF07700000007770000F4FF4FF077000000077770F0FFFFFFF077000
+          00007777700FFFFFFF0770000000777777000000000770000000777777777777
+          777770000000}
+        OnClick = SpeedButton46Click
+      end
+      object SpeedButton10: TSpeedButton
+        Left = 491
+        Top = 28
+        Width = 23
+        Height = 22
+      end
+      object SpeedButton9: TSpeedButton
+        Left = 466
+        Top = 29
+        Width = 23
+        Height = 22
+        Glyph.Data = {
+          F6000000424DF600000000000000760000002800000010000000100000000100
+          0400000000008000000000000000000000001000000010000000000000000000
+          BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+          7777770000000000007770330770000330777033077000033077703307700003
+          30777033000000033077703333333333307770330000000330777030FFFFFFF0
+          30777030FFFCFFF030777030FFCCCFF030777030FFFCCCF777777030FFFFCCC7
+          C777700000077CCCC7777777777777CCC777777777777CCCC777}
+        OnClick = SpeedButton9Click
+      end
+      object SpeedButton8: TSpeedButton
+        Left = 443
+        Top = 313
+        Width = 23
+        Height = 22
+      end
+      object SpeedButton7: TSpeedButton
+        Left = 443
+        Top = 286
+        Width = 23
+        Height = 22
+      end
+      object Label32: TLabel
+        Left = 12
+        Top = 404
+        Width = 59
+        Height = 13
+        Caption = 'Zuordnung :'
+      end
+      object Label31: TLabel
+        Left = 12
+        Top = 385
+        Width = 56
+        Height = 13
+        Caption = 'Media Typ :'
+      end
+      object Label30: TLabel
+        Left = 12
+        Top = 363
+        Width = 84
+        Height = 13
+        Caption = 'Button MEdia ID :'
+      end
+      object Label24: TLabel
+        Left = 12
+        Top = 344
+        Width = 105
+        Height = 13
+        Caption = 'Video Playliste  count:'
+      end
+      object Label23: TLabel
+        Left = 12
+        Top = 32
+        Width = 86
+        Height = 13
+        Caption = 'Button Bild Datei :'
+      end
+      object Label22: TLabel
+        Left = 12
+        Top = 13
+        Width = 53
+        Height = 13
+        Caption = 'Button ID :'
+      end
+      object Label21: TLabel
+        Left = 76
+        Top = 317
+        Width = 75
+        Height = 13
+        Caption = 'Video Playliste :'
+      end
+      object Label20: TLabel
+        Left = 76
+        Top = 290
+        Width = 56
+        Height = 13
+        Caption = 'Gallerie ID :'
+      end
+      object Label19: TLabel
+        Left = 12
+        Top = 263
+        Width = 108
+        Height = 13
+        AutoSize = False
+        Caption = 'Aktions ID :'
+      end
+      object Label18: TLabel
+        Left = 76
+        Top = 263
+        Width = 64
+        Height = 13
+        Caption = 'Single Video :'
+      end
+      object Label17: TLabel
+        Left = 12
+        Top = 235
+        Width = 127
+        Height = 13
+        Caption = 'Aktion bei aktiven Button :'
+      end
+      object Label16: TLabel
+        Left = 12
+        Top = 209
+        Width = 135
+        Height = 13
+        Caption = 'Aktion bei inaktiven Button :'
+      end
+      object Label14: TLabel
+        Left = 12
+        Top = 185
+        Width = 66
+        Height = 13
+        Caption = 'Button Aktiv :'
+      end
+      object Edit22: TEdit
+        Left = 175
+        Top = 399
+        Width = 72
+        Height = 21
+        TabOrder = 0
+      end
+      object Edit21: TEdit
+        Left = 175
+        Top = 379
+        Width = 72
+        Height = 21
+        TabOrder = 1
+      end
+      object Edit20: TEdit
+        Left = 175
+        Top = 360
+        Width = 72
+        Height = 21
+        TabOrder = 2
+      end
+      object Edit14: TEdit
+        Left = 175
+        Top = 341
+        Width = 72
+        Height = 21
+        TabOrder = 3
+      end
+      object Edit13: TEdit
+        Left = 175
+        Top = 29
+        Width = 289
+        Height = 21
+        TabOrder = 4
+      end
+      object Edit12: TEdit
+        Left = 175
+        Top = 10
+        Width = 289
+        Height = 21
+        TabOrder = 5
+      end
+      object Edit11: TEdit
+        Left = 175
+        Top = 314
+        Width = 264
+        Height = 21
+        TabOrder = 6
+      end
+      object Edit10: TEdit
+        Left = 175
+        Top = 287
+        Width = 264
+        Height = 21
+        TabOrder = 7
+      end
+      object Edit9: TEdit
+        Left = 175
+        Top = 260
+        Width = 264
+        Height = 21
+        TabOrder = 8
+      end
+      object ComboBox6: TComboBox
+        Left = 175
+        Top = 233
+        Width = 264
+        Height = 21
+        TabOrder = 9
+        Text = 'ComboBox2'
+        Items.Strings = (
+          '1 zentrales Video des Kunden einzeln spielen'
+          'Gesondertes Video f'#252'r den Kunde spielen'
+          'Eine Gallerie des Kunden anzeigen'
+          'Eigene Anwendung eines Kunden '
+          'Kontaktinformationen anzeigen'
+          'Keine Aktion'
+          '"In Arbeit"-Seite einblenden'
+          'Signalton'
+          'Frei'
+          'SpecialContent ausl'#246'sen'
+          'SpecialContent 2 ausl'#246'sen'
+          'SpecialContent 3 ausl'#246'sen'
+          'SpezialContent schliessen'
+          'Open Unterinhalt'
+          'Bild anzeigen an XY f'#252'r Timer'
+          'Bild anzeigen an XY ohne Timer'
+          'Internetseite '#246'ffnen')
+      end
+      object ComboBox5: TComboBox
+        Left = 175
+        Top = 206
+        Width = 264
+        Height = 21
+        TabOrder = 10
+        Text = 'ComboBox1'
+        Items.Strings = (
+          'Keine Aktion'
+          '"In Arbeit"-Seite einblenden'
+          'Signalton')
+      end
+      object CheckBox1: TCheckBox
+        Left = 175
+        Top = 184
+        Width = 97
+        Height = 17
+        TabOrder = 11
+      end
+    end
+    object TTabPage
+      Left = 4
+      Top = 24
+      Caption = 'Aktion'
+      object Label25: TLabel
+        Left = 16
+        Top = 10
+        Width = 104
+        Height = 13
+        Caption = 'Click Playlisten Datei :'
+      end
+      object Label26: TLabel
+        Left = 16
+        Top = 26
+        Width = 131
+        Height = 13
+        Caption = 'Click Playlisten Zuordnung :'
+      end
+      object Label27: TLabel
+        Left = 16
+        Top = 45
+        Width = 128
+        Height = 13
+        Caption = 'Click Playlisten Gallerie ID :'
+      end
+      object Label29: TLabel
+        Left = 16
+        Top = 64
+        Width = 56
+        Height = 13
+        Caption = 'Gallerie ID :'
+      end
+      object Label33: TLabel
+        Left = 16
+        Top = 83
+        Width = 53
+        Height = 13
+        Caption = 'Feldname :'
+      end
+      object SpeedButton11: TSpeedButton
+        Left = 472
+        Top = 61
+        Width = 23
+        Height = 22
+      end
+      object SpeedButton14: TSpeedButton
+        Left = 472
+        Top = 23
+        Width = 23
+        Height = 22
+      end
+      object SpeedButton6: TSpeedButton
+        Left = 472
+        Top = 3
+        Width = 23
+        Height = 22
+        Glyph.Data = {
+          F6000000424DF600000000000000760000002800000010000000100000000100
+          0400000000008000000000000000000000001000000010000000000000000000
+          BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+          7777770000000000007770330770000330777033077000033077703307700003
+          30777033000000033077703333333333307770330000000330777030FFFFFFF0
+          30777030FFFCFFF030777030FFCCCFF030777030FFFCCCF777777030FFFFCCC7
+          C777700000077CCCC7777777777777CCC777777777777CCCC777}
+        OnClick = SpeedButton6Click
+      end
+      object SpeedButton12: TSpeedButton
+        Left = 496
+        Top = 41
+        Width = 23
+        Height = 22
+        Glyph.Data = {
+          36010000424D3601000000000000760000002800000013000000100000000100
+          040000000000C0000000C40E0000C40E00001000000000000000000000000000
+          8000008000000080800080000000800080008080000080808000C0C0C0000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FFFFFFFFFFFF
+          FFFFFFF00000FFFFFFFFFFFFFFFFFFF00000FFFFFFFFFFFFFFFFFFF00000FFFF
+          4FFFFFF4FFFFFFF00000FFFF44FFFFF44FFFFFF00000FFFF424FFFF424FFFFF0
+          0000FFFF4224FFF4224FFFF00000FFFF42224FF42224FFF00000FFFF422224F4
+          22224FF00000FFFF42224FF42224FFF00000FFFF4224FFF4224FFFF00000FFFF
+          424FFFF424FFFFF00000FFFF44FFFFF44FFFFFF00000FFFF4FFFFFF4FFFFFFF0
+          0000FFFFFFFFFFFFFFFFFFF00000FFFFFFFFFFFFFFFFFFF00000}
+        OnClick = SpeedButton12Click
+      end
+      object SpeedButton15: TSpeedButton
+        Left = 472
+        Top = 41
+        Width = 23
+        Height = 22
+        Glyph.Data = {
+          42010000424D4201000000000000760000002800000011000000110000000100
+          040000000000CC00000000000000000000001000000010000000000000000000
+          BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00777777777777
+          7777700000007777777777777777700000007770000000000007700000007770
+          FFFFFFFFFF07700000007770FFFFFFFFFF07700000007770FF4FF4FFFF077000
+          00007770FF4FF4FFFF07700000007770F4444444FF07700000007770FFF4FF4F
+          FF07700000007770FFF4FF4FFF07700000007770FF4444444F07700000007770
+          FFFF4FF4FF07700000007770000F4FF4FF077000000077770F0FFFFFFF077000
+          00007777700FFFFFFF0770000000777777000000000770000000777777777777
+          777770000000}
+        OnClick = SpeedButton15Click
+      end
+      object Edit15: TEdit
+        Left = 184
+        Top = 3
+        Width = 289
+        Height = 21
+        TabOrder = 0
+      end
+      object Edit16: TEdit
+        Left = 184
+        Top = 23
+        Width = 289
+        Height = 21
+        TabOrder = 1
+      end
+      object Edit17: TEdit
+        Left = 184
+        Top = 42
+        Width = 289
+        Height = 21
+        TabOrder = 2
+      end
+      object Edit19: TEdit
+        Left = 184
+        Top = 61
+        Width = 289
+        Height = 21
+        TabOrder = 3
+      end
+      object Edit23: TEdit
+        Left = 184
+        Top = 80
+        Width = 289
+        Height = 21
+        TabOrder = 4
+      end
+    end
+  end
+  object FileOpenDialog1: TFileOpenDialog
+    FavoriteLinks = <>
+    FileTypes = <
+      item
+        DisplayName = 'Button Datei'
+        FileMask = '*.BDTA'
+      end
+      item
+        DisplayName = 'Alle Dateien'
+        FileMask = '*.*'
+      end>
+    Options = []
+    Left = 104
+    Top = 65520
+  end
+  object FileSaveDialog1: TFileSaveDialog
+    DefaultExtension = '*.BDTA'
+    DefaultFolder = 'C:\TSS\WebTemp\SchemaTemp'
+    FavoriteLinks = <>
+    FileTypes = <
+      item
+        DisplayName = 'Button Dateien'
+        FileMask = '*.BDTA'
+      end
+      item
+        DisplayName = 'Alle Dateien'
+        FileMask = '*.*'
+      end>
+    OkButtonLabel = 'Abspeichern'
+    Options = []
+    Left = 232
+  end
+  object TSS_BE_KundenDaten: TFDQuery
+    Connection = TSS_BE_DataForm.TSS_FE_Connection
+    SQL.Strings = (
+      'select k.* from logumedia.kunden k')
+    Left = 16
+    Top = 384
+  end
+  object DataSource3: TDataSource
+    DataSet = TSS_BE_KundenDaten
+    Left = 96
+    Top = 384
+  end
+  object OpenPictureDialog1: TOpenPictureDialog
+    Options = [ofHideReadOnly, ofAllowMultiSelect, ofEnableSizing]
+    Left = 424
+  end
+  object FileOpenDialog2: TFileOpenDialog
+    FavoriteLinks = <>
+    FileTypes = <
+      item
+        DisplayName = 'Schematic Datei'
+        FileMask = '*.DSCH'
+      end
+      item
+        DisplayName = 'Alle Dateien'
+        FileMask = '*.*'
+      end>
+    Options = []
+    Left = 944
+  end
+  object FileSaveDialog2: TFileSaveDialog
+    DefaultExtension = '*.BDTA'
+    DefaultFolder = 'C:\TSS\WebTemp\SchemaTemp'
+    FavoriteLinks = <>
+    FileTypes = <
+      item
+        DisplayName = 'Schematic Dateien'
+        FileMask = '*.DSCH'
+      end
+      item
+        DisplayName = 'Alle Dateien'
+        FileMask = '*.*'
+      end>
+    OkButtonLabel = 'Abspeichern'
+    Options = []
+    Left = 1136
+  end
+  object FileOpenDialog3: TFileOpenDialog
+    FavoriteLinks = <>
+    FileTypes = <
+      item
+        DisplayName = 'Video Datei'
+        FileMask = '*.mp4'
+      end
+      item
+        DisplayName = 'Alle Dateien'
+        FileMask = '*.*'
+      end>
+    Options = [fdoAllowMultiSelect]
+    Left = 908
+    Top = 358
+  end
+  object FileOpenDialog4: TFileOpenDialog
+    FavoriteLinks = <>
+    FileTypes = <
+      item
+        DisplayName = 'Gallerie Datei'
+        FileMask = '*.GAL'
+      end
+      item
+        DisplayName = 'Alle Dateien'
+        FileMask = '*.*'
+      end>
+    Options = []
+    Left = 908
+    Top = 662
+  end
+end

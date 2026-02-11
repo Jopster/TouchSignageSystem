@@ -14,6 +14,7 @@ type
     { Public-Deklarationen }
     Global_Schematic_id:String;
     MainPath:String;
+    WatcherID:string;
   end;
 
 var

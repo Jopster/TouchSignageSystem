@@ -3,34 +3,32 @@ object TSS_SS_MainForm: TTSS_SS_MainForm
   Top = 0
   BorderStyle = bsNone
   Caption = 'TSS_SS Hauptfenster'
-  ClientHeight = 581
-  ClientWidth = 1016
+  ClientHeight = 886
+  ClientWidth = 1462
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   WindowState = wsMaximized
   OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
   OnShow = FormShow
-  PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
-    Top = 569
-    Width = 1016
+    Top = 874
+    Width = 1462
     Height = 12
     Align = alBottom
     BevelOuter = bvNone
     Color = clBlack
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = -24
-    ExplicitWidth = 1040
     DesignSize = (
-      1016
+      1462
       12)
     object Label1: TLabel
       Left = 0
@@ -146,26 +144,50 @@ object TSS_SS_MainForm: TTSS_SS_MainForm
       Style = lsStandard
     end
     object SpeedButton1: TSpeedButton
-      Left = 1000
+      Left = 1446
       Top = 1
       Width = 11
       Height = 11
       Anchors = [akRight, akBottom]
       Caption = 'X'
       OnClick = SpeedButton1Click
+      ExplicitLeft = 1000
     end
   end
-  object IdTCPServer1: TIdTCPServer
-    Bindings = <>
-    DefaultPort = 9800
-    OnConnect = IdTCPServer1Connect
-    OnExecute = IdTCPServer1Execute
-    Left = 952
-    Top = 488
+  object Button1: TButton
+    Left = 0
+    Top = 0
+    Width = 185
+    Height = 25
+    Caption = 'Connect/Activate System'
+    TabOrder = 1
+    OnClick = Button1Click
   end
-  object IdSchedulerOfThreadDefault1: TIdSchedulerOfThreadDefault
-    MaxThreads = 0
-    Left = 856
-    Top = 488
+  object Button2: TButton
+    Left = 0
+    Top = 31
+    Width = 185
+    Height = 25
+    Caption = 'Refresh Displayanzahl'
+    TabOrder = 2
+    OnClick = Button2Click
+  end
+  object IdTCPClient1: TIdTCPClient
+    OnDisconnected = IdTCPClient1Disconnected
+    OnWork = IdTCPClient1Work
+    OnConnected = IdTCPClient1Connected
+    ConnectTimeout = 0
+    Host = '5.9.43.123'
+    Port = 9900
+    ReadTimeout = -1
+    Left = 24
+    Top = 64
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 5000
+    OnTimer = Timer1Timer
+    Left = 24
+    Top = 136
   end
 end

@@ -1,14 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.706,C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\TSS_SS.dproj=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Project1.dproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.278,=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.398,C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\TSS_SS_ServicePanelClass_unit.pas=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.840,C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\TSS_SS_DataForm_unit.pas=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\Unit2.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.840,C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\TSS_SS_DataForm_unit.dfm=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\Unit2.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.922,C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\TSS_SS_Mainform_unit.pas=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Unit2.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.922,C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\TSS_SS_Mainform_unit.dfm=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Unit2.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.247,=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.054,C:\Users\User\Documents\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\Unit2.dfm=C:\Users\User\Documents\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_Frontend\TSS_FE_XpertButtonSetupForm.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.922,C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Unit2.dfm=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\TSS_SS_Mainform_unit.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.840,C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\Unit2.dfm=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\TSS_SS_DataForm_unit.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.582,C:\Users\User\Documents\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_Frontend\TSS_FE_XpertButtonSetupForm.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.398,C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\Unit1.pas=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\TSS_SS_ServicePanelClass_unit.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.552,=C:\Users\User\Documents\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\Unit2.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.150,=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.247,=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.840,C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\Unit2.pas=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\TSS_SS_DataForm_unit.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.054,C:\Users\User\Documents\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\Unit2.pas=C:\Users\User\Documents\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_Frontend\TSS_FE_XpertButtonSetupForm.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.706,C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Project1.dproj=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\TSS_SS.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.922,C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\Unit2.pas=C:\Users\Jopst\OneDrive\Dokumente\Embarcadero\Studio\Projekte\TouchSignageSystem\TSS_ServiceScreen\TSS_SS_Mainform_unit.pas</Transaction>
   </Transactions>
 </BorlandProject>

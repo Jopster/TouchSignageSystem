@@ -11,12 +11,10 @@ object TSS_FE_Specialform: TTSS_FE_Specialform
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poDesigned
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
-  PixelsPerInch = 96
   TextHeight = 13
   object Panel4: TPanel
     Left = 0
@@ -157,15 +155,20 @@ object TSS_FE_Specialform: TTSS_FE_Specialform
     end
   end
   object Panel1: TPanel
-    Left = -28
-    Top = -19
-    Width = 1129
-    Height = 699
+    Left = 0
+    Top = 0
+    Width = 1272
+    Height = 712
+    Align = alClient
     BevelOuter = bvNone
     TabOrder = 1
-    object Wplayer1: TWindowsMediaPlayer
-      Left = -616
-      Top = -9
+    ExplicitLeft = -28
+    ExplicitTop = -19
+    ExplicitWidth = 1129
+    ExplicitHeight = 699
+    object WPlayer1: TWindowsMediaPlayer
+      Left = 28
+      Top = 19
       Width = 245
       Height = 240
       TabOrder = 0

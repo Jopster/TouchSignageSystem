@@ -3,13 +3,7 @@
         <ProjectGuid>{80F4410B-5400-4B45-AF41-833866ED7E34}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="TSS_Frontend\TSS_FE.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="TSS_Backend\TSS_BE.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="TSS_WatchDog\TSS_WD.dproj">
+        <Projects Include="TSS_Frontend\TSS_FE_Engine.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Components\CoolTrayIcon\CoolTrayIcon_D5.dproj">
@@ -18,7 +12,67 @@
         <Projects Include="TSS_ServiceScreen\TSS_SS.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\animatedButton.dproj">
+        <Projects Include="..\TSS_Components.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TSS_Backend\TSS_BE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\dcef3-master\packages\DCEF_XE5.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\CEF4Delphi-master\packages\CEF4Delphi_designtime.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\CEF4Delphi-master\demos\Delphi_VCL\TinyBrowser\TinyBrowser.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\CEF4Delphi-master\demos\Delphi_VCL\SimpleBrowser\SimpleBrowser_D7.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\CEF4Delphi-master\demos\Delphi_VCL\KioskOSRBrowser\KioskOSRBrowser.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TSS_WatchDog\TSS_WD.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TSS_Frontend\TSS_FE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\Program Files (x86)\Embarcadero\Studio\21.0\source\vcl\stdvcl40.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\FMXUI-master\source\YxdUI.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\JPPack-master\packages\Delphi_10.4_Sydney\JPPack.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\JPLib-master\packages\Delphi_10.4_Sydney\JPLib.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\JPPack-master\3rd-party\uweraabe-pngcomponents-e49426e1df87\PackagesTokyo\PngComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\IGDIPlusMod-master\packages\Delphi_10.4_Sydney\IGDIPlusMod.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\OrangeUI-main\OrangeUIStyles\ViewOrangeUIStyles_FMX_D10_4.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\FMXComponents-master\Demo\FMXComponentsDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\..\Pattern-Lock-master\Pattern Lock\NAPLocker.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\jvcl-master\jvcl\install\JVCLInstall\JVCLInstall.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\jvcl-master\jvcl\packages\d27_x64\JvWizards.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Project1.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -29,32 +83,14 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="TSS_FE">
-        <MSBuild Projects="TSS_Frontend\TSS_FE.dproj"/>
+    <Target Name="TSS_FE_Engine">
+        <MSBuild Projects="TSS_Frontend\TSS_FE_Engine.dproj"/>
     </Target>
-    <Target Name="TSS_FE:Clean">
-        <MSBuild Projects="TSS_Frontend\TSS_FE.dproj" Targets="Clean"/>
+    <Target Name="TSS_FE_Engine:Clean">
+        <MSBuild Projects="TSS_Frontend\TSS_FE_Engine.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="TSS_FE:Make">
-        <MSBuild Projects="TSS_Frontend\TSS_FE.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="TSS_BE">
-        <MSBuild Projects="TSS_Backend\TSS_BE.dproj"/>
-    </Target>
-    <Target Name="TSS_BE:Clean">
-        <MSBuild Projects="TSS_Backend\TSS_BE.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="TSS_BE:Make">
-        <MSBuild Projects="TSS_Backend\TSS_BE.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="TSS_WD">
-        <MSBuild Projects="TSS_WatchDog\TSS_WD.dproj"/>
-    </Target>
-    <Target Name="TSS_WD:Clean">
-        <MSBuild Projects="TSS_WatchDog\TSS_WD.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="TSS_WD:Make">
-        <MSBuild Projects="TSS_WatchDog\TSS_WD.dproj" Targets="Make"/>
+    <Target Name="TSS_FE_Engine:Make">
+        <MSBuild Projects="TSS_Frontend\TSS_FE_Engine.dproj" Targets="Make"/>
     </Target>
     <Target Name="CoolTrayIcon_D5">
         <MSBuild Projects="..\..\Components\CoolTrayIcon\CoolTrayIcon_D5.dproj"/>
@@ -74,23 +110,203 @@
     <Target Name="TSS_SS:Make">
         <MSBuild Projects="TSS_ServiceScreen\TSS_SS.dproj" Targets="Make"/>
     </Target>
-    <Target Name="animatedButton">
-        <MSBuild Projects="..\animatedButton.dproj"/>
+    <Target Name="TSS_Components">
+        <MSBuild Projects="..\TSS_Components.dproj"/>
     </Target>
-    <Target Name="animatedButton:Clean">
-        <MSBuild Projects="..\animatedButton.dproj" Targets="Clean"/>
+    <Target Name="TSS_Components:Clean">
+        <MSBuild Projects="..\TSS_Components.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="animatedButton:Make">
-        <MSBuild Projects="..\animatedButton.dproj" Targets="Make"/>
+    <Target Name="TSS_Components:Make">
+        <MSBuild Projects="..\TSS_Components.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TSS_BE">
+        <MSBuild Projects="TSS_Backend\TSS_BE.dproj"/>
+    </Target>
+    <Target Name="TSS_BE:Clean">
+        <MSBuild Projects="TSS_Backend\TSS_BE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TSS_BE:Make">
+        <MSBuild Projects="TSS_Backend\TSS_BE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DCEF_XE5">
+        <MSBuild Projects="..\..\Components\dcef3-master\packages\DCEF_XE5.dproj"/>
+    </Target>
+    <Target Name="DCEF_XE5:Clean">
+        <MSBuild Projects="..\..\Components\dcef3-master\packages\DCEF_XE5.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DCEF_XE5:Make">
+        <MSBuild Projects="..\..\Components\dcef3-master\packages\DCEF_XE5.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CEF4Delphi_designtime">
+        <MSBuild Projects="..\..\Components\CEF4Delphi-master\packages\CEF4Delphi_designtime.dproj"/>
+    </Target>
+    <Target Name="CEF4Delphi_designtime:Clean">
+        <MSBuild Projects="..\..\Components\CEF4Delphi-master\packages\CEF4Delphi_designtime.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CEF4Delphi_designtime:Make">
+        <MSBuild Projects="..\..\Components\CEF4Delphi-master\packages\CEF4Delphi_designtime.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TinyBrowser">
+        <MSBuild Projects="..\..\Components\CEF4Delphi-master\demos\Delphi_VCL\TinyBrowser\TinyBrowser.dproj"/>
+    </Target>
+    <Target Name="TinyBrowser:Clean">
+        <MSBuild Projects="..\..\Components\CEF4Delphi-master\demos\Delphi_VCL\TinyBrowser\TinyBrowser.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TinyBrowser:Make">
+        <MSBuild Projects="..\..\Components\CEF4Delphi-master\demos\Delphi_VCL\TinyBrowser\TinyBrowser.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SimpleBrowser_D7">
+        <MSBuild Projects="..\..\Components\CEF4Delphi-master\demos\Delphi_VCL\SimpleBrowser\SimpleBrowser_D7.dproj"/>
+    </Target>
+    <Target Name="SimpleBrowser_D7:Clean">
+        <MSBuild Projects="..\..\Components\CEF4Delphi-master\demos\Delphi_VCL\SimpleBrowser\SimpleBrowser_D7.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SimpleBrowser_D7:Make">
+        <MSBuild Projects="..\..\Components\CEF4Delphi-master\demos\Delphi_VCL\SimpleBrowser\SimpleBrowser_D7.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="KioskOSRBrowser">
+        <MSBuild Projects="..\..\Components\CEF4Delphi-master\demos\Delphi_VCL\KioskOSRBrowser\KioskOSRBrowser.dproj"/>
+    </Target>
+    <Target Name="KioskOSRBrowser:Clean">
+        <MSBuild Projects="..\..\Components\CEF4Delphi-master\demos\Delphi_VCL\KioskOSRBrowser\KioskOSRBrowser.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="KioskOSRBrowser:Make">
+        <MSBuild Projects="..\..\Components\CEF4Delphi-master\demos\Delphi_VCL\KioskOSRBrowser\KioskOSRBrowser.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TSS_WD">
+        <MSBuild Projects="TSS_WatchDog\TSS_WD.dproj"/>
+    </Target>
+    <Target Name="TSS_WD:Clean">
+        <MSBuild Projects="TSS_WatchDog\TSS_WD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TSS_WD:Make">
+        <MSBuild Projects="TSS_WatchDog\TSS_WD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TSS_FE">
+        <MSBuild Projects="TSS_Frontend\TSS_FE.dproj"/>
+    </Target>
+    <Target Name="TSS_FE:Clean">
+        <MSBuild Projects="TSS_Frontend\TSS_FE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TSS_FE:Make">
+        <MSBuild Projects="TSS_Frontend\TSS_FE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="stdvcl40">
+        <MSBuild Projects="C:\Program Files (x86)\Embarcadero\Studio\21.0\source\vcl\stdvcl40.dproj"/>
+    </Target>
+    <Target Name="stdvcl40:Clean">
+        <MSBuild Projects="C:\Program Files (x86)\Embarcadero\Studio\21.0\source\vcl\stdvcl40.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="stdvcl40:Make">
+        <MSBuild Projects="C:\Program Files (x86)\Embarcadero\Studio\21.0\source\vcl\stdvcl40.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="YxdUI">
+        <MSBuild Projects="..\..\Components\FMXUI-master\source\YxdUI.dproj"/>
+    </Target>
+    <Target Name="YxdUI:Clean">
+        <MSBuild Projects="..\..\Components\FMXUI-master\source\YxdUI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="YxdUI:Make">
+        <MSBuild Projects="..\..\Components\FMXUI-master\source\YxdUI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JPPack">
+        <MSBuild Projects="..\..\Components\JPPack-master\packages\Delphi_10.4_Sydney\JPPack.dproj"/>
+    </Target>
+    <Target Name="JPPack:Clean">
+        <MSBuild Projects="..\..\Components\JPPack-master\packages\Delphi_10.4_Sydney\JPPack.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JPPack:Make">
+        <MSBuild Projects="..\..\Components\JPPack-master\packages\Delphi_10.4_Sydney\JPPack.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JPLib">
+        <MSBuild Projects="..\..\Components\JPLib-master\packages\Delphi_10.4_Sydney\JPLib.dproj"/>
+    </Target>
+    <Target Name="JPLib:Clean">
+        <MSBuild Projects="..\..\Components\JPLib-master\packages\Delphi_10.4_Sydney\JPLib.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JPLib:Make">
+        <MSBuild Projects="..\..\Components\JPLib-master\packages\Delphi_10.4_Sydney\JPLib.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PngComponents">
+        <MSBuild Projects="..\..\Components\JPPack-master\3rd-party\uweraabe-pngcomponents-e49426e1df87\PackagesTokyo\PngComponents.dproj"/>
+    </Target>
+    <Target Name="PngComponents:Clean">
+        <MSBuild Projects="..\..\Components\JPPack-master\3rd-party\uweraabe-pngcomponents-e49426e1df87\PackagesTokyo\PngComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PngComponents:Make">
+        <MSBuild Projects="..\..\Components\JPPack-master\3rd-party\uweraabe-pngcomponents-e49426e1df87\PackagesTokyo\PngComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IGDIPlusMod">
+        <MSBuild Projects="..\..\Components\IGDIPlusMod-master\packages\Delphi_10.4_Sydney\IGDIPlusMod.dproj"/>
+    </Target>
+    <Target Name="IGDIPlusMod:Clean">
+        <MSBuild Projects="..\..\Components\IGDIPlusMod-master\packages\Delphi_10.4_Sydney\IGDIPlusMod.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IGDIPlusMod:Make">
+        <MSBuild Projects="..\..\Components\IGDIPlusMod-master\packages\Delphi_10.4_Sydney\IGDIPlusMod.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ViewOrangeUIStyles_FMX_D10_4">
+        <MSBuild Projects="..\..\Components\OrangeUI-main\OrangeUIStyles\ViewOrangeUIStyles_FMX_D10_4.dproj"/>
+    </Target>
+    <Target Name="ViewOrangeUIStyles_FMX_D10_4:Clean">
+        <MSBuild Projects="..\..\Components\OrangeUI-main\OrangeUIStyles\ViewOrangeUIStyles_FMX_D10_4.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ViewOrangeUIStyles_FMX_D10_4:Make">
+        <MSBuild Projects="..\..\Components\OrangeUI-main\OrangeUIStyles\ViewOrangeUIStyles_FMX_D10_4.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXComponentsDemo">
+        <MSBuild Projects="..\..\Components\FMXComponents-master\Demo\FMXComponentsDemo.dproj"/>
+    </Target>
+    <Target Name="FMXComponentsDemo:Clean">
+        <MSBuild Projects="..\..\Components\FMXComponents-master\Demo\FMXComponentsDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXComponentsDemo:Make">
+        <MSBuild Projects="..\..\Components\FMXComponents-master\Demo\FMXComponentsDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="NAPLocker">
+        <MSBuild Projects="..\..\..\..\Pattern-Lock-master\Pattern Lock\NAPLocker.dproj"/>
+    </Target>
+    <Target Name="NAPLocker:Clean">
+        <MSBuild Projects="..\..\..\..\Pattern-Lock-master\Pattern Lock\NAPLocker.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NAPLocker:Make">
+        <MSBuild Projects="..\..\..\..\Pattern-Lock-master\Pattern Lock\NAPLocker.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JVCLInstall">
+        <MSBuild Projects="..\..\Components\jvcl-master\jvcl\install\JVCLInstall\JVCLInstall.dproj"/>
+    </Target>
+    <Target Name="JVCLInstall:Clean">
+        <MSBuild Projects="..\..\Components\jvcl-master\jvcl\install\JVCLInstall\JVCLInstall.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JVCLInstall:Make">
+        <MSBuild Projects="..\..\Components\jvcl-master\jvcl\install\JVCLInstall\JVCLInstall.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JvWizards">
+        <MSBuild Projects="..\..\Components\jvcl-master\jvcl\packages\d27_x64\JvWizards.dproj"/>
+    </Target>
+    <Target Name="JvWizards:Clean">
+        <MSBuild Projects="..\..\Components\jvcl-master\jvcl\packages\d27_x64\JvWizards.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JvWizards:Make">
+        <MSBuild Projects="..\..\Components\jvcl-master\jvcl\packages\d27_x64\JvWizards.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Project1">
+        <MSBuild Projects="..\Project1.dproj"/>
+    </Target>
+    <Target Name="Project1:Clean">
+        <MSBuild Projects="..\Project1.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project1:Make">
+        <MSBuild Projects="..\Project1.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="TSS_FE;TSS_BE;TSS_WD;CoolTrayIcon_D5;TSS_SS;animatedButton"/>
+        <CallTarget Targets="TSS_FE_Engine;CoolTrayIcon_D5;TSS_SS;TSS_Components;TSS_BE;DCEF_XE5;CEF4Delphi_designtime;TinyBrowser;SimpleBrowser_D7;KioskOSRBrowser;TSS_WD;TSS_FE;stdvcl40;YxdUI;JPPack;JPLib;PngComponents;IGDIPlusMod;ViewOrangeUIStyles_FMX_D10_4;FMXComponentsDemo;NAPLocker;JVCLInstall;JvWizards;Project1"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="TSS_FE:Clean;TSS_BE:Clean;TSS_WD:Clean;CoolTrayIcon_D5:Clean;TSS_SS:Clean;animatedButton:Clean"/>
+        <CallTarget Targets="TSS_FE_Engine:Clean;CoolTrayIcon_D5:Clean;TSS_SS:Clean;TSS_Components:Clean;TSS_BE:Clean;DCEF_XE5:Clean;CEF4Delphi_designtime:Clean;TinyBrowser:Clean;SimpleBrowser_D7:Clean;KioskOSRBrowser:Clean;TSS_WD:Clean;TSS_FE:Clean;stdvcl40:Clean;YxdUI:Clean;JPPack:Clean;JPLib:Clean;PngComponents:Clean;IGDIPlusMod:Clean;ViewOrangeUIStyles_FMX_D10_4:Clean;FMXComponentsDemo:Clean;NAPLocker:Clean;JVCLInstall:Clean;JvWizards:Clean;Project1:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="TSS_FE:Make;TSS_BE:Make;TSS_WD:Make;CoolTrayIcon_D5:Make;TSS_SS:Make;animatedButton:Make"/>
+        <CallTarget Targets="TSS_FE_Engine:Make;CoolTrayIcon_D5:Make;TSS_SS:Make;TSS_Components:Make;TSS_BE:Make;DCEF_XE5:Make;CEF4Delphi_designtime:Make;TinyBrowser:Make;SimpleBrowser_D7:Make;KioskOSRBrowser:Make;TSS_WD:Make;TSS_FE:Make;stdvcl40:Make;YxdUI:Make;JPPack:Make;JPLib:Make;PngComponents:Make;IGDIPlusMod:Make;ViewOrangeUIStyles_FMX_D10_4:Make;FMXComponentsDemo:Make;NAPLocker:Make;JVCLInstall:Make;JvWizards:Make;Project1:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
